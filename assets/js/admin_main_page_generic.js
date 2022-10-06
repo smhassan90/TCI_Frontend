@@ -9,37 +9,37 @@ $(document).ready(function(){
     $('.btnAddUpdate').click(function(){
         var urlAddButton= AllConstant.baseURL + "/btnAddAdminPanel";
         var tablename = $(this).attr("data-tablename");
-        var columns = $(this).attr("data-columns");
         var primarykey = $(this).attr("data-primarykeycolumn");
+        if($('#form'+tablename).valid()){
+            var json = getJSON(this);
+            var dataJSON = {"tablename":tablename,"data":json};
+            $('#pleaseWaitDialog').modal();
+            $.ajax({
+                type: "GET",
+                url: urlAddButton,
+                contentType: "application/json",
+                data:dataJSON,
+                dataType: "text",
+                success: function (data) {
+                    $('#pleaseWaitDialog').modal('hide');
+                    var deleteResponse = JSON.parse(data);
+                    if(deleteResponse.status==="200"){
+                        getData(tablename,primarykey);
+                        toastr.success("Successful!","Entry completed!");
+                        $('#form'+tablename)[0].reset();
 
-        var columnJsonArr = columns.split('*');
-
-        var json = {};
-        var preJson = {};
-        for(var i =0; i<columnJsonArr.length;i++){
-            preJson[columnJsonArr[i]] = $('#inp'+tablename+columnJsonArr[i]).val();
-        }
-        json = JSON.stringify(preJson);
-        var dataJSON = {"tablename":tablename,"data":json};
-
-        $.ajax({
-            type: "GET",
-            url: urlAddButton,
-            contentType: "application/json",
-            data:dataJSON,
-            dataType: "text",
-            success: function (data) {
-                var deleteResponse = JSON.parse(data);
-                if(deleteResponse.status==="200"){
-                    getData(tablename,primarykey);
-                }else{
-                    alert("Something went wrong while deleting!");
+                    }else{
+                        toastr.error("ERROR!","Unsuccessful entry because of undefined error!");
+                    }
+                },
+                error: function (data) {
+                    $('#pleaseWaitDialog').modal('hide');
+                    toastr.error("ERROR!","Unsuccessful entry because of undefined error!");
                 }
-            },
-            error: function (data) {
-                alert("Something went wrong while deleting!");
-            }
-        });
+            });
+        }
+
+
 
     });
 
@@ -56,12 +56,23 @@ $(document).ready(function(){
         var selectorMainForm = getFormMainDivSelectorFromTableName(tablename);
 
         //Request to get Data for below table. In response it will populate table.
-        if(tablename!=='performance' && tablename!=='dashboard'){
+        if(tablename!=='Dataentry' && tablename!=='dashboard'){
             getData(tablename,primarykey);
         }
 
 
         show_hide_section_tab(selectorMainForm);
+
+    });
+
+    $('.dataentry-tab').click(function(){
+        //In menu item data-tablename should be there. Table Name from Class name
+        var tablename = $(this).attr("data-tablename");
+        //Primary Key column name should be in data-primarykeycolumn in menu item
+        var primarykey = $(this).attr("data-primarykeycolumn");
+
+        getData(tablename,primarykey);
+
 
     });
 
@@ -90,7 +101,7 @@ $(document).ready(function(){
             cancelButtonText: "No, cancel"
         }).then(function (isConfirm) {
             if (isConfirm) {
-
+                $('#pleaseWaitDialog').modal();
                 $.ajax({
                     type: "GET",
                     url: url,
@@ -98,15 +109,18 @@ $(document).ready(function(){
                     data:{tablename:tablename, id:id, primarykey:primarykey},
                     dataType: "text",
                     success: function (data) {
+                        $('#pleaseWaitDialog').modal('hide');
                         var deleteResponse = JSON.parse(data);
                         if(deleteResponse.status==="200"){
                             getData(tablename,primarykey);
+                            toastr.success("Successful!","Entry deleted!");
                         }else{
-                            alert("Something went wrong while deleting!");
+                            toastr.error("ERROR!","Unsuccessful request because of undefined error!");
                         }
                     },
                     error: function (data) {
-                        alert("Something went wrong while deleting!");
+                        $('#pleaseWaitDialog').modal('hide');
+                        toastr.error("ERROR!","Unsuccessful request because of undefined error!");
                     }
                 });
             }
@@ -155,7 +169,7 @@ function generateTable(tableData, primarykeyColumn, tablename){
         var tableHeader = tableData;
         var id = "";
         if(tableData.length>0){
-            tableHTML = "<table class=\"table table-striped table-bordered zero-configuration dataTable\" id=\"\" role=\"grid\" aria-describedby=\"DataTables_Table_0_info\">\n" +
+            tableHTML = "<div class='table-responsive'><table class=\"table table-striped table-bordered zero-configuration dataTable\" id=\"\" role=\"grid\" aria-describedby=\"DataTables_Table_0_info\">\n" +
                 "                                        <thead>\n" +
                 "                                        <tr role=\"row\">\n";
             $.each(tableHeader, function(key, value){
@@ -173,7 +187,7 @@ function generateTable(tableData, primarykeyColumn, tablename){
                 tableHTML +=  "<tr>\n";
                 id = "";
                 $.each(value, function(key, value){
-                    if(id==="" && key===primarykeyColumn){
+                    if(id==="" && key.lowerCase===primarykeyColumn.lowerCase){
                         id=value;
                     }
                     tableHTML+= "<td>"+value+"</td>";
@@ -188,13 +202,67 @@ function generateTable(tableData, primarykeyColumn, tablename){
 
 
             tableHTML+="                          </tbody>\n" +
-                "                                      </table>";
+                "                                      </table></div>";
         }else{
             tableHTML = "<p>No data found</p>";
         }
     }
     return tableHTML;
 }
+/*
+It will generate HTML Table from data. It will dynamically create columns and rows according to json.
+ */
+function generateListForCoachee(tableData, primarykeyColumn, tablename){
+    var tableHTML = "";
+    var selectorid = getSelectorFromTableName(tablename);
+
+    if(tableData === undefined || tableData===null){
+        tableHTML = "<p>No data found</p>";
+    }else{
+        var tableHeader = tableData;
+        var id = "";
+        if(tableData.length>0){
+            tableHTML = "<div class='table-responsive'><table class=\"table table-striped table-bordered zero-configuration dataTable\" id=\"\" role=\"grid\" aria-describedby=\"DataTables_Table_0_info\">\n" +
+                "                                        <thead>\n" +
+                "                                        <tr role=\"row\">\n";
+            $.each(tableHeader, function(key, value){
+                $.each(value, function(key, value){
+                    tableHTML+= "<th class=\"sorting\" tabindex=\"0\" aria-controls=\"\" rowspan=\"1\" colspan=\"1\" aria-label=\"Name: activate to sort column ascending\" style=\"width: 171.875px;\" aria-sort=\"descending\">"+key+"</th>";
+                });
+                return false;
+            });
+
+            tableHTML+="                                        </tr>\n" +
+                "                                        </thead>\n" +
+                "                                        <tbody>\n";
+
+            $.each(tableData, function(key, value){
+                tableHTML +=  "<tr>\n";
+                id = "";
+                $.each(value, function(key, value){
+                    if(id==="" && key.lowerCase===primarykeyColumn.lowerCase){
+                        id=value;
+                    }
+                    tableHTML+= "<td>"+value+"</td>";
+                });
+                tableHTML +=  "                                          <td>\n" +
+                    '                                            <a data-selectorid="'+selectorid+'" data-tablename="'+tablename+'" data-id="'+id+'" data-primarykeycolumn = "'+primarykeyColumn+'" class=\"btnDel danger p-0\" data-original-title=\"\" title=\"\">\n' +
+                    "                                              <i class=\" fa fa-trash-o font-medium-3 mr-2\"></i>\n" +
+                    "                                            </a>\n" +
+                    "                                          </td>\n";
+                tableHTML +=  "</tr>\n";
+            });
+
+
+            tableHTML+="                          </tbody>\n" +
+                "                                      </table></div>";
+        }else{
+            tableHTML = "<p>No data found</p>";
+        }
+    }
+    return tableHTML;
+}
+
 
 /*
 selector to show data below form. HTML table
@@ -221,6 +289,7 @@ This will call an API and get the data.
  */
 function getData(tableName, primarykey ){
     var url= AllConstant.baseURL + "/getAdminData";
+    $('#pleaseWaitDialog').modal();
     $.ajax({
         type: "GET",
         url: url,
@@ -228,6 +297,7 @@ function getData(tableName, primarykey ){
         data:{tableName:tableName},
         dataType: "text",
         success: function (data) {
+            $('#pleaseWaitDialog').modal('hide');
             adminData = JSON.parse(data);
             var generatedHTML = generateTable(adminData,primarykey,tableName);
 
@@ -236,7 +306,8 @@ function getData(tableName, primarykey ){
             $(selector).html(generatedHTML);
         },
         error: function (data) {
-            return "failed";
+            $('#pleaseWaitDialog').modal('hide');
+            toastr.error("ERROR!","Data cannot be populated because of undefined error!");
         }
     });
 }
@@ -256,6 +327,7 @@ function show_hide_section_tab($class_name) {
 
 function getDropdownData(tablename, primarykeycolumn, dropdown1, joiningtablename1, joiningcolumnname1, joiningcolumnvalue1) {
     var url= AllConstant.baseURL + "/getAdminDropDownData";
+    $('#pleaseWaitDialog').modal();
     $.ajax({
         type: "GET",
         url: url,
@@ -263,16 +335,18 @@ function getDropdownData(tablename, primarykeycolumn, dropdown1, joiningtablenam
         data:{tableName:joiningtablename1, column1:joiningcolumnname1, column2: joiningcolumnvalue1},
         dataType: "text",
         success: function (data) {
+            $('#pleaseWaitDialog').modal('hide');
             var response = JSON.parse(data);
 
             if(response.status==="200"){
                 populateDropDown(tablename, dropdown1, response.keyValueList);
             }else{
-                alert("Something went wrong in populating dropdown!");
+                toastr.error("ERROR!","Unsuccessful request because of undefined error!");
             }
         },
         error: function (data) {
-            return "failed";
+            $('#pleaseWaitDialog').modal('hide');
+            toastr.error("ERROR!","Unsuccessful request because of undefined error!");
         }
     });
 }
@@ -286,9 +360,37 @@ function getSelectSelectorID(tablename, dropdown1) {
 
 function populateDropDown(tablename, dropdown1, keyValueList) {
     var seletSelectorID = getSelectSelectorID(tablename,dropdown1);
-    var html = "";
+    var html = "<select id=\"inp"+tablename+dropdown1+"\" name=\"interested\" class=\"form-control "+tablename.lowerCase+"_"+dropdown1.lowerCase+"_select selectpicker search_select\" data-show-subtext=\"true\" data-live-search=\"true\">";
+
+   // var html = "";
     for(var i=0; i<keyValueList.length; i++){
-        html += "<option value='"+keyValueList[i].key+"'>"+keyValueList[i].key+" - "+keyValueList[i].value+"</option>";
+        html += "<option data-tokens='"+keyValueList[i].value+"' value='"+keyValueList[i].key+"'>"+keyValueList[i].key+" - "+keyValueList[i].value+"</option>";
     }
+    html +="</select>";
+    updateSelectPicker(seletSelectorID,html);
+}
+
+function updateSelectPicker(seletSelectorID,html){
     $(seletSelectorID).html(html);
+    $(seletSelectorID).selectpicker();
+    $(seletSelectorID).addClass('selectpicker');
+    $(seletSelectorID).selectpicker('refresh');
+}
+
+function getJSON(selector){
+    var tablename = $(selector).attr("data-tablename");
+    var columns = $(selector).attr("data-columns");
+    var primarykey = $(selector).attr("data-primarykeycolumn");
+
+    var columnJsonArr = columns.split('*');
+
+    var json = {};
+    var preJson = {};
+    var isMandatory = "";
+    for(var i =0; i<columnJsonArr.length;i++){
+        preJson[columnJsonArr[i]] = $('#inp'+tablename+columnJsonArr[i]).val();
+    }
+    preJson['UPDATE_BY'] = 'System';
+    json = JSON.stringify(preJson);
+    return json;
 }

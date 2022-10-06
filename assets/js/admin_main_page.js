@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
     $('#btnAddChannel').click(function(){
         var tablename = $("#channel_menu").attr("data-tablename");
         var primarykeycolumn = $("#channel_menu").attr("data-primarykeycolumn");

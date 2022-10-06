@@ -53625,3 +53625,13 @@ input[type='checkbox'].switch, input[type='radio'].switch {
 .main-content .color-palette span.dark {
   color : rgba(0, 0, 0, 0.87);
 }
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+.bg_dashboard{
+    background-image: url("/assets/img/dashboard_icon.png");
+    width:25px;
+    height:25px;
+}

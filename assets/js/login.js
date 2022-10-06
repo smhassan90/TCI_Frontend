@@ -3,22 +3,18 @@
 $(document).ready(function(){
     var token = getCookie('token');
     if(token!==null && token !== '' && token !== 'undefined'){
-        self.location="menu.html";
+        self.location="side_menu.html";
     }
 
-    $('.loginform').keypress(function(e){
-        if(e.keyCode==13){
-        $('#btnLogin').click();
-        }
-      });
-
     $('#btnLogin').click(function(){
+
+        var id = $('#inputID').val();
         var id = $('#inputID').val();
         var pass = $('#inputPass').val();
         var staffType = 3;
         var url = AllConstant.baseURL + "/loginServerAttempt";
 
-       // var encrypted = CryptoJS.AES.encrypt(AllConstant.baseString, pass).toString();
+        // var encrypted = CryptoJS.AES.encrypt(AllConstant.baseString, pass).toString();
 
         if(id !== "" && pass !== "" ){
             $.ajax({
@@ -32,9 +28,11 @@ $(document).ready(function(){
                     if(loginResponse.statusCode !== undefined){
                         if(loginResponse.statusCode === "200"){
                             setCookie('token', loginResponse.token,365);
-                            setCookie('positionCode', loginResponse.positionCode,365);
-                            swal("Successfully!", loginResponse.employee.NAME+", You are logged in", "success").done();
-                            self.location="menu.html";
+                            setCookie('city', loginResponse.token,365);
+                            setCookie('role', loginResponse.token,365);
+                            setCookie('type', loginResponse.token,365);
+                            swal("Successfully!", loginResponse.user.NAME+", You are logged in", "success").done();
+                            self.location="side_menu.html";
                         }else if(loginResponse.statusCode === "404"){
                             swal("Error!", "Invalid username or password!", "error").done();
                         }
@@ -45,5 +43,7 @@ $(document).ready(function(){
                 }
             });
         }
+
+
     });
 });
