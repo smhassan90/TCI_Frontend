@@ -28,9 +28,11 @@ $(document).ready(function(){
                     if(loginResponse.statusCode !== undefined){
                         if(loginResponse.statusCode === "200"){
                             setCookie('token', loginResponse.token,365);
-                            setCookie('city', loginResponse.token,365);
-                            setCookie('role', loginResponse.token,365);
-                            setCookie('type', loginResponse.token,365);
+                            setCookie('city', loginResponse.user.city,365);
+                            setCookie('role', loginResponse.user.role,365);
+                            setCookie('type', loginResponse.type,365);
+                            setCookie('name', loginResponse.user.name,365);
+                            setCookie('username', loginResponse.user.userName,365);
                             swal("Successfully!", loginResponse.user.NAME+", You are logged in", "success").done();
                             self.location="side_menu.html";
                         }else if(loginResponse.statusCode === "404"){

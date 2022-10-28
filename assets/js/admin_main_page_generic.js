@@ -1,11 +1,6 @@
-/*
-const AllConstant = {
-    baseURL: "http://172.16.16.192:8080"
-};
-*/
-
 
 $(document).ready(function(){
+    populateForm();
     $('.btnAddUpdate').click(function(){
         var urlAddButton= AllConstant.baseURL + "/btnAddAdminPanel";
         var tablename = $(this).attr("data-tablename");
@@ -27,7 +22,7 @@ $(document).ready(function(){
                         getData(tablename,primarykey);
                         toastr.success("Successful!","Entry completed!");
                         $('#form'+tablename)[0].reset();
-
+                        populateForm();
                     }else{
                         toastr.error("ERROR!","Unsuccessful entry because of undefined error!");
                     }
@@ -360,21 +355,25 @@ function getSelectSelectorID(tablename, dropdown1) {
 
 function populateDropDown(tablename, dropdown1, keyValueList) {
     var seletSelectorID = getSelectSelectorID(tablename,dropdown1);
-    var html = "<select id=\"inp"+tablename+dropdown1+"\" name=\"interested\" class=\"form-control "+tablename.lowerCase+"_"+dropdown1.lowerCase+"_select selectpicker search_select\" data-show-subtext=\"true\" data-live-search=\"true\">";
+    $('.div'+tablename+dropdown1).html('');
+    var html = "<select id=\"inp"+tablename+dropdown1+"\" data-ispopulated='true' name=\"interested\" class=\"form-control "+tablename.lowerCase+"_"+dropdown1.lowerCase+"_select selectpicker search_select\" data-show-subtext=\"true\" data-live-search=\"true\">";
 
-   // var html = "";
+    // var html = "";
     for(var i=0; i<keyValueList.length; i++){
         html += "<option data-tokens='"+keyValueList[i].value+"' value='"+keyValueList[i].key+"'>"+keyValueList[i].key+" - "+keyValueList[i].value+"</option>";
     }
     html +="</select>";
-    updateSelectPicker(seletSelectorID,html);
+    updateSelectPicker(tablename,dropdown1,html);
+
+
+
 }
 
-function updateSelectPicker(seletSelectorID,html){
-    $(seletSelectorID).html(html);
-    $(seletSelectorID).selectpicker();
-    $(seletSelectorID).addClass('selectpicker');
-    $(seletSelectorID).selectpicker('refresh');
+function updateSelectPicker(tablename,dropdown1,html){
+    $('.div'+tablename+dropdown1).html(html);
+    $('#inp'+tablename+dropdown1).selectpicker();
+    $('#inp'+tablename+dropdown1).addClass('selectpicker');
+    $('#inp'+tablename+dropdown1).selectpicker('refresh');
 }
 
 function getJSON(selector){
@@ -390,7 +389,12 @@ function getJSON(selector){
     for(var i =0; i<columnJsonArr.length;i++){
         preJson[columnJsonArr[i]] = $('#inp'+tablename+columnJsonArr[i]).val();
     }
-    preJson['UPDATE_BY'] = 'System';
+    preJson['UPDATE_BY'] = getCookie('username');
     json = JSON.stringify(preJson);
     return json;
+}
+
+function populateForm(){
+    $('.inpCity').val(getCookie("city"));
+
 }

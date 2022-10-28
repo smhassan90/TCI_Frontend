@@ -51,7 +51,7 @@
                         <a id="dashboard_menu"  data-tablename="dashboard" data-primarykeycolumn="ID" class="menu-item"><i class="icon-home"></i><span data-i18n="" class="menu-title">Dashboard</span></a>
                     </li>
                     <li class="nav-item">
-                        <a id="outcome_menu"  data-tablename="Outcome" data-primarykeycolumn="ID" class="menu-item"><i class="ft-activity"></i><span data-i18n="" class="menu-title">HIIs</span></a>
+                        <a id="hii_menu"  data-tablename="HII" data-primarykeycolumn="ID" class="menu-item"><i class="ft-activity"></i><span data-i18n="" class="menu-title">HIIs</span></a>
                     </li>
                     <li class="nav-item">
                         <a id="output_menu"  data-tablename="Outcome" data-primarykeycolumn="ID" class="menu-item"><i class="icon-directions"></i><span data-i18n="" class="menu-title">Output</span></a>
@@ -63,7 +63,7 @@
                         <a id="project_learning_menu"  data-tablename="Outcome" data-primarykeycolumn="ID" class="menu-item"><i class="icon-rocket"></i><span data-i18n="" class="menu-title">Project Learning</span></a>
                     </li>
                     <li class="nav-item">
-                        <a id="repository_menu"  data-tablename="Outcome" data-primarykeycolumn="ID" class="menu-item"><i class="icon-info"></i><span data-i18n="" class="menu-title">Knowledge Hub</span></a>
+                        <a id="repository_menu"  data-tablename="KnowledgeHub" data-primarykeycolumn="ID" class="menu-item"><i class="icon-info"></i><span data-i18n="" class="menu-title">Knowledge Hub</span></a>
                     </li>
                     <li class="nav-item">
                         <a id="dataentry_menu"  data-tablename="Dataentry" data-primarykeycolumn="ID" class="menu-item"><i class="icon-screen-desktop"></i><span data-i18n="" class="menu-title">Data Entry</span></a>
@@ -296,71 +296,229 @@
             </div>
 
         </section>
-        <section id="outcome_main_form" class="main-content hide_block">
+        <section id="hii_main_form" class="main-content hide_block">
             <div class="content-wrapper">
-                <div class="container-fluid"><div class="row">
-                    <div class="col-sm-12">
-                        <h2 class="content-header">Outcome</h2>
-                    </div>
-                </div>
-                    <!-- Input Validation start -->
-                    <section class="input-validation">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="card-block">
-                                            <form class="form-horizontal" novalidate="">
-                                                <div class="row">
-                                                    <div class="col-lg-6 col-md-12">
-                                                        <div class="form-group">
-                                                            <h5>Title <span class="required">*</span></h5>
-                                                            <div class="controls">
-                                                                <input id="inpOutcomeTITLE" type="text" name="text" class="form-control" required="" data-validation-required-message="This field is required">
-                                                                <div class="help-block"></div></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-lg-6 col-md-12">
-                                                        <div class="block-button">
-                                                            <a id="btnAddOutcome" data-tablename="Outcome" data-columns="TITLE" data-primarykeycolumn="ID" class="btnAddUpdate btn btn-success btn-lg btn-block">Add/Update</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                            <section id="extended">
-                                                <div class="row">
-                                                    <div class="col-sm-12">
-                                                        <div class="card">
-                                                            <div class="card-header">
-                                                                <div class="card-title-wrap bar-success">
-                                                                    <h4 class="card-title">Outcome</h4>
-                                                                </div>
-                                                            </div>
-                                                            <div class="card-body">
-                                                                <div id="outcome_div_content" class="card-block">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </section>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="media align-items-stretch">
+                                        <div class="p-2 text-center bg-info rounded-left pt-3">
+                                            <i class="icon-camera font-large-2 text-white"></i>
+                                        </div>
+                                        <div class="py-2 px-2 media-body">
+                                            <h6 class="info">Coaching</h6>
+                                            <h5 class="text-bold-400">800</h5>
+                                            <div class="progress mt-1 mb-0" style="height: 7px;">
+                                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
                                         </div>
                                     </div>
-
                                 </div>
-
                             </div>
-
                         </div>
-
-                    </section>
-
-                    <!-- Input Validation end -->
+                        <div class="col-xl-3 col-lg-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="media align-items-stretch">
+                                        <div class="p-2 text-center bg-danger rounded-left pt-3">
+                                            <i class="icon-user font-large-2 text-white"></i>
+                                        </div>
+                                        <div class="py-2 px-2 media-body">
+                                            <h6 class="danger">Raise Assessment</h6>
+                                            <h5 class="text-bold-400">12</h5>
+                                            <div class="progress mt-1 mb-0" style="height: 7px;">
+                                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="media align-items-stretch">
+                                        <div class="p-2 text-center bg-success rounded-left pt-3">
+                                            <i class="icon-basket-loaded font-large-2 text-white"></i>
+                                        </div>
+                                        <div class="py-2 px-2 media-body">
+                                            <h6 class="success">In - Reach</h6>
+                                            <h5 class="text-bold-400">4,65,879</h5>
+                                            <div class="progress mt-1 mb-0" style="height: 7px;">
+                                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 30%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="media align-items-stretch">
+                                        <div class="p-2 text-center bg-warning rounded-left pt-3">
+                                            <i class="icon-wallet font-large-2 text-white"></i>
+                                        </div>
+                                        <div class="py-2 px-2 media-body">
+                                            <h6 class="warning">Out-Reach</h6>
+                                            <h5 class="text-bold-400">5.6 M</h5>
+                                            <div class="progress mt-1 mb-0" style="height: 7px;">
+                                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="100" aria-valuemin="100" aria-valuemax="100" style="width:80%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="media align-items-stretch">
+                                        <div class="p-2 text-center bg-warning rounded-left pt-3">
+                                            <i class="icon-camera font-large-2 text-white"></i>
+                                        </div>
+                                        <div class="py-2 px-2 media-body">
+                                            <h6 class="warning">Family Health Days</h6>
+                                            <h5 class="text-bold-400">28</h5>
+                                            <div class="progress mt-1 mb-0" style="height: 7px;">
+                                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="80" aria-valuemin="100" aria-valuemax="100" style="width:80%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
+
+        </section>
+        <section id="knowledgehub_main_form" class="main-content hide_block">
+            <div class="content-wrapper">
+                <div class="container-fluid"><div class="row">
+                    <div class="col-sm-12">
+                        <h2 class="content-header">Knowledge Hub</h2>
+                    </div>
+                </div>
+                    <div class="card">
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item dataentry-tab" >
+                                <a class="nav-link" id="base-tabXX1" data-toggle="tab" aria-controls="tab1" href="#Xtab1" aria-expanded="true">Pause And Reflect</a>
+                            </li>
+                            <li class="nav-item dataentry-tab mappingtable"
+                            >
+                                <a class="nav-link" id="base-tabXX2" data-toggle="tab" aria-controls="tab2" href="#Xtab2" aria-expanded="false">Most Significant Change</a>
+                            </li>
+                            <li class="nav-item dataentry-tab">
+                                <a class="nav-link" id="base-tabXX3" data-toggle="tab" aria-controls="tab3" href="#Xtab3" aria-expanded="false">Library</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content px-1 pt-1">
+                            <div role="tabpanel " class="tab-pane active show" id="Xtab1" aria-expanded="true" aria-labelledby="base-tabX1">
+                                <div class="content-wrapper">
+                                    <div class="container-fluid"><div class="row">
+                                        <div class="col-sm-12">
+                                            <h2 class="content-header">Pause And Reflect</h2>
+                                        </div>
+                                    </div>
+                                             <!-- Input Validation start -->
+                                        <section class="input-validation">
+
+                                        </section>
+
+                                        <!-- Input Validation end -->
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="Xtab2" aria-labelledby="base-tabX2">
+                                <div class="content-wrapper">
+                                    <div class="container-fluid"><div class="row">
+                                        <div class="col-sm-12">
+                                            <h2 class="content-header">Most Significant Change</h2>
+                                        </div>
+                                    </div>
+                                        <!-- Input Validation start -->
+                                        <section class="input-validation">
+                                            <div class="row">
+
+                                            </div>
+
+                                        </section>
+
+                                        <!-- Input Validation end -->
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="Xtab3" aria-labelledby="base-tabX3">
+                                <div class="content-wrapper">
+                                        <!-- Input Validation start -->
+                                        <section class="input-validation">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <div class="card">
+                                                        <div class="card-header">
+                                                            <div class="card-title-wrap bar-info">
+                                                                <h4 class="card-title">Library</h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <div class="card-block">
+                                                                <table class="table table-striped">
+                                                                    <thead>
+                                                                    <tr>
+                                                                        <th>#</th>
+                                                                        <th>File Name</th>
+                                                                        <th>Type</th>
+                                                                        <th>For</th>
+                                                                        <th>Date</th>
+                                                                        <th>Upload By</th>
+                                                                        <th>City</th>
+                                                                    </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                    <tr>
+                                                                        <th scope="row">1</th>
+                                                                        <td><a href ="D:\upload\hii_fhd_Islamabad_19_1_1234.docx" >CLMIS File</a></td>
+                                                                        <td>Quarterly Progress Report</td>
+                                                                        <td>Donor</td>
+                                                                        <td>21st October, 2022</td>
+                                                                        <td>Alam</td>
+                                                                        <td>Karachi Dist-Orangi</td>
+
+                                                                    </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </section>
+
+                                        <!-- Input Validation end -->
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="modal hide" id="pleaseWaitDialogKH" data-backdrop="static" data-keyboard="false">
+                                <div class="modal-body">
+                                    <div id="ajax_loader_kh">
+                                        <img src="app-assets/img/loader.gif" style="display: block; margin-left: auto; margin-right: auto;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </section>
 
         </section>
         <section id="dataentry_main_form" class="main-content hide_block">
@@ -387,6 +545,31 @@
                             <li class="nav-item dataentry-tab" data-tablename="HealthFacility" data-primarykeycolumn="ID">
                                 <a class="nav-link" id="base-tabX4" data-toggle="tab" aria-controls="tab4" href="#tab4" aria-expanded="false">Health Facility</a>
                             </li>
+                            <li class="nav-item dataentry-tab" data-tablename="HIIRaiseAssessment" data-primarykeycolumn="ID">
+                                <a class="nav-link" id="base-tabX5" data-toggle="tab" aria-controls="tab5" href="#tab5" aria-expanded="false">Raise Assessment</a>
+                            </li>
+                            <li class="nav-item dataentry-tab mappingtable" data-tablename="HIIInReach" data-primarykeycolumn="ID"
+                                data-dropdown1="coachId" data-joiningtablename1 = "CoachRegistration" data-joiningcolumnname1="id" data-joiningcolumnvalue1 = "name&contactNumber&designation&gender"
+                                data-dropdown2="healthFacilityId" data-joiningtablename2 = "HealthFacility" data-joiningcolumnname2="id" data-joiningcolumnvalue2 = "nameOfFacility&typeOfHealthFacility"
+                            >
+                                <a class="nav-link" id="base-tabX6" data-toggle="tab" aria-controls="tab6" href="#tab6" aria-expanded="false">In-reach</a>
+                            </li>
+                            <li class="nav-item dataentry-tab mappingtable" data-tablename="HIIOutReach" data-primarykeycolumn="ID"
+                                data-dropdown1="coachId" data-joiningtablename1 = "CoachRegistration" data-joiningcolumnname1="id" data-joiningcolumnvalue1 = "name&contactNumber&designation&gender"
+                                data-dropdown2="healthFacilityId" data-joiningtablename2 = "HealthFacility" data-joiningcolumnname2="id" data-joiningcolumnvalue2 = "nameOfFacility&typeOfHealthFacility"
+                            >
+                                <a class="nav-link" id="base-tabX7" data-toggle="tab" aria-controls="tab7" href="#tab7" aria-expanded="false">Out-reach</a>
+                            </li>
+                            <li class="nav-item dataentry-tab mappingtable" data-tablename="HIIFHD" data-primarykeycolumn="ID"
+                                data-dropdown1="coachId" data-joiningtablename1 = "CoachRegistration" data-joiningcolumnname1="id" data-joiningcolumnvalue1 = "name&contactNumber&designation&gender"
+                                data-dropdown2="healthFacilityId" data-joiningtablename2 = "HealthFacility" data-joiningcolumnname2="id" data-joiningcolumnvalue2 = "nameOfFacility&typeOfHealthFacility"
+                            >
+                                <a class="nav-link" id="base-tabX8" data-toggle="tab" aria-controls="tab8" href="#tab8" aria-expanded="false">Family Health Day</a>
+                            </li>
+                            <li class="nav-item dataentry-tab" data-tablename="KnowledgeHub" data-primarykeycolumn="ID"
+                            >
+                                <a class="nav-link" id="base-tabX9" data-toggle="tab" aria-controls="tab9" href="#tab9" aria-expanded="false">Knowledge Hub</a>
+                            </li>
                         </ul>
                         <div class="tab-content px-1 pt-1">
                             <div role="tabpanel " class="tab-pane active show" id="clmis" aria-expanded="true" aria-labelledby="base-tabX1">
@@ -396,7 +579,7 @@
                                             <h2 class="content-header">DHIS / CLMIS</h2>
                                         </div>
                                     </div>
-                                        <!-- Input Validation start -->
+                                        a        <!-- Input Validation start -->
                                         <section class="input-validation">
                                             <div class="row">
                                                 <div class="col-md-12">
@@ -542,13 +725,8 @@
                                                                             </div>
                                                                             <div class="form-group">
                                                                                 <h5>Select Coach / Coachee <span class="required">*</span></h5>
-                                                                                <div class="controls">
-                                                                                    <select id="inpCoachingLogcoachId" data-live-search="true" name="interested" class="form-control coachinglog_coachid_select" data-joiningcolumnvalue1 = "name&contactNumber&designation&gender" required>
-                                                                                        <option value="" selected="" disabled="">Select Coach Coachee</option>
-                                                                                    </select>
-                                                                                    <div class="valid-feedback">Good to Go!</div>
-                                                                                    <div class="invalid-feedback">Please fill out this field.</div>
-                                                                                    <div class="help-block"></div>
+                                                                                <div class="controls divCoachingLogcoachId">
+
                                                                                 </div>
                                                                                 <div class="row">
                                                                                     <div class="col-lg-6 col-md-12">
@@ -610,7 +788,7 @@
                                                                             <div class="form-group">
                                                                                 <h5>Name of Health Facility <span class="required">*</span></h5>
                                                                                 <div class="controls">
-                                                                                    <select id="inpCoachingLoghealthFacilityId" data-live-search="true" name="interested" class="form-control coachinglog_healthfacilityid_select" required>
+                                                                                    <select id="inpCoachingLoghealthFacilityId" data-live-search="true" name="interested" class="form-control coachinglog_healthfacilityid_select" data-isPopulated="false" required>
                                                                                         <option value="" selected="" disabled="">Select Health Facility</option>
                                                                                     </select>
                                                                                     <div class="valid-feedback">Good to Go!</div>
@@ -727,7 +905,7 @@
                                                                     <div class="row">
                                                                         <div class="col-lg-6 col-md-12">
                                                                             <div class="block-button">
-                                                                                <a id="btnAddCoachingLog" type="reset" data-tablename="CoachingLog" data-columns="id*coachId*coachingDate*durationOfCoachingSession*typeOfSession*modeOfCoaching*healthFacilityId*typeOfCoachingRequest*focusOfCoaching*coachingTool*hiaCoachedOn*materialUsedDuringSession*coachingSessionObjectivesAndActivities*kindOfRequiredFollowUp*areasOfImprovement*recommendations*followUpRequired*UPDATE_BY*UPDATE_DATE" data-primarykeycolumn="ID" class="btn btn-success btn-lg btn-block btnAddUpdate">Add</a>
+                                                                                <a id="btnAddCoachingLog" type="reset" data-tablename="CoachingLog" data-columns="id*coachId*coachingDate*durationOfCoachingSession*typeOfSession*modeOfCoaching*healthFacilityId*typeOfCoachingRequest*focusOfCoaching*coachingTool*hiaCoachedOn*materialUsedDuringSession*coachingSessionObjectivesAndActivities*kindOfRequiredFollowUp*areasOfImprovement*recommendations*followUpRequired*UPDATE_BY*UPDATE_DATE" data-primarykeycolumn="ID" class="btn btn-success btn-lg btn-block">Add</a>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -825,6 +1003,14 @@
                                                                                 <h5>Roles And Responsibility <span class="required">*</span></h5>
                                                                                 <div class="controls">
                                                                                     <input type="text" id="inpCoachRegistrationrolesAndResponsibilities" class="form-control" name="date" required>
+                                                                                    <div class="valid-feedback">Good to Go!</div>
+                                                                                    <div class="invalid-feedback">Please fill out this field.</div>
+                                                                                    <div class="help-block"></div></div>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <h5>Basic Pay Scale <span class="required">*</span></h5>
+                                                                                <div class="controls">
+                                                                                    <input type="number" id="inpCoachRegistrationbasicPayScale" class="form-control" name="date" required>
                                                                                     <div class="valid-feedback">Good to Go!</div>
                                                                                     <div class="invalid-feedback">Please fill out this field.</div>
                                                                                     <div class="help-block"></div></div>
@@ -1043,6 +1229,794 @@
 
                                 </div>
                             </div>
+                            <div class="tab-pane" id="tab5" aria-labelledby="base-tabX5">
+                                <div class="content-wrapper">
+                                    <div class="container-fluid"><div class="row">
+                                        <div class="col-sm-12">
+                                            <h2 class="content-header">Raise Assessment</h2>
+                                        </div>
+                                    </div>
+                                        <!-- Input Validation start -->
+                                        <section class="input-validation">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div class="card-block">
+                                                                <form id="formHIIRaiseAssessment" class="form-horizontal was-validated">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-6 col-md-12">
+                                                                            <div class="formFields">
+                                                                                <div class="form-group">
+                                                                                    <h5>Date Completed <span class="required">*</span></h5>
+                                                                                    <div class="controls">
+                                                                                        <input type="date" id="inpHIIRaiseAssessmentdateCompleted" class="form-control" name="date" required>
+                                                                                        <div class="help-block"></div></div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <h5>City<span class="required">*</span></h5>
+                                                                                    <div class="controls">
+                                                                                        <input id="inpHIIRaiseAssessmentcity" type="text" name="text" class="form-control inpCity" readonly value="0">
+                                                                                        <div class="valid-feedback">Good to Go!</div>
+                                                                                        <div class="invalid-feedback">Please fill out this field.</div>
+                                                                                        <div class="help-block"></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+
+                                                                                    <h5>Reporting Month <span class="required">*</span></h5>
+                                                                                    <div class="controls">
+                                                                                        <select id="inpHIIRaiseAssessmentmonth" name="interested" class="form-control" required>
+                                                                                            <option value="" selected="" disabled="">Select Month</option>
+                                                                                            <option value="1"> January </option>
+                                                                                            <option value="2"> February </option>
+                                                                                            <option value="3"> March </option>
+                                                                                            <option value="4"> April </option>
+                                                                                            <option value="5"> May </option>
+                                                                                            <option value="6"> June </option>
+                                                                                            <option value="7"> July </option>
+                                                                                            <option value="8"> August </option>
+                                                                                            <option value="9"> September </option>
+                                                                                            <option value="10"> October </option>
+                                                                                            <option value="11"> November </option>
+                                                                                            <option value="12"> December </option>
+
+                                                                                        </select>
+                                                                                        <div class="valid-feedback">Good to Go!</div>
+                                                                                        <div class="invalid-feedback">Please fill out this field.</div>
+                                                                                        <div class="help-block"></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <h5>Reporting Year <span class="required">*</span></h5>
+                                                                                    <div class="controls">
+                                                                                        <select id="inpHIIRaiseAssessmentyear" name="interested" class="form-control" required>
+                                                                                            <option value="" selected="" disabled="">Select Year</option>
+                                                                                            <option value="2022"> 2022 </option>
+                                                                                            <option value="2023"> 2023 </option>
+                                                                                            <option value="2024"> 2024 </option>
+                                                                                            <option value="2025"> 2025 </option>
+
+                                                                                        </select>
+                                                                                        <div class="valid-feedback">Good to Go!</div>
+                                                                                        <div class="invalid-feedback">Please fill out this field.</div>
+                                                                                        <div class="help-block"></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <h5>Quarter <span class="required">*</span></h5>
+                                                                                    <div class="controls">
+                                                                                        <select id="inpHIIRaiseAssessmentquarter" name="interested" class="form-control" required>
+                                                                                            <option value="" selected="" disabled="">Select Quarter</option>
+                                                                                            <option value="1"> 1 </option>
+                                                                                            <option value="2"> 2 </option>
+                                                                                            <option value="3"> 3 </option>
+                                                                                            <option value="4"> 4 </option>
+
+                                                                                        </select>
+                                                                                        <div class="valid-feedback">Good to Go!</div>
+                                                                                        <div class="invalid-feedback">Please fill out this field.</div>
+                                                                                        <div class="help-block"></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+
+                                                                                    <div data-tablename="HIIRaiseAssessment" class="controls Checklist hiichecklist">
+                                                                                        <h5>Checklist <span class="required">*</span></h5>
+                                                                                        <div class="form-check form-switch">
+                                                                                            <input class="form-check-input" type="checkbox" id="1chk1">
+                                                                                            <label class="form-check-label" for="1chk1">1.	RAISE Assessment form provided to Government official of DoH and PWD</label>
+                                                                                        </div>
+                                                                                        <div class="form-check form-switch">
+                                                                                            <input class="form-check-input" type="checkbox" id="1chk2">
+                                                                                            <label class="form-check-label" for="1chk2">2.	Quarterly meeting held at city level to conduct and complete RAISE assessment.</label>
+                                                                                        </div>
+                                                                                        <div class="form-check form-switch">
+                                                                                            <input class="form-check-input" type="checkbox" id="1chk3">
+                                                                                            <label class="form-check-label" for="1chk3">3.	City Manger of TCI participated in detailed discussion of RAISE assessment</label>
+                                                                                        </div>
+                                                                                        <div class="form-check form-switch">
+                                                                                            <input class="form-check-input" type="checkbox" id="1chk4">
+                                                                                            <label class="form-check-label" for="1chk4">4.	Technical assistance provided by TCI Manger in finalization of quarterly RAISE assessment.</label>
+                                                                                        </div>
+                                                                                        <div class="form-check form-switch">
+                                                                                            <input class="form-check-input" type="checkbox" id="1chk5">
+                                                                                            <label class="form-check-label" for="1chk5">5.	Quarterly submission of RAISE assessment form to M&E team for analysis and feedback.</label>
+                                                                                        </div>
+                                                                                        <div class="form-check form-switch">
+                                                                                            <input class="form-check-input" type="checkbox" id="1chk6">
+                                                                                            <label class="form-check-label" for="1chk6">6.	Comments of M&E team address and final copy submitted for quarterly progress report. </label>
+                                                                                        </div>
+
+
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <h5>Score %<span class="required">*</span></h5>
+                                                                                    <div class="controls">
+                                                                                        <input id="inpHIIRaiseAssessmentscore" type="text" name="text" class="form-control" readonly value="0">
+                                                                                        <div class="valid-feedback">Good to Go!</div>
+                                                                                        <div class="invalid-feedback">Please fill out this field.</div>
+                                                                                        <div class="help-block"></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <div class="controls">
+                                                                                        <input class="d-none" id="inpHIIRaiseAssessmentraiseFilename" type="text" name="text" class="form-control" readonly value="0" >
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <h5>Final Score in Raise Assessment Excel Sheet<span class="required">*</span></h5>
+                                                                                    <div class="controls">
+                                                                                        <input id="inpHIIRaiseAssessmentraiseScore" type="number" name="text" class="form-control" required value="0">
+                                                                                        <div class="valid-feedback">Good to Go!</div>
+                                                                                        <div class="invalid-feedback">Please fill out this field.</div>
+                                                                                        <div class="help-block"></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="block-button">
+                                                                                <a data-tablename="HIIRaiseAssessment" class="btn btn-success btn-lg btn-block btnValidateAndLock">Validate and Lock</a>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <div class="controls">
+                                                                                    <div class="input-group my-3">
+                                                                                        <div class="mb-3">
+                                                                                            <label for="inpRaiseFile" class="form-label">Raise Assessment Excel Sheet</label>
+                                                                                            <input class="form-control form-control-sm" id="inpRaiseFile" type="file">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-lg-6 col-md-12">
+                                                                            <div class="block-button">
+                                                                                <a id="btnUploadHIIRaiseAssessment" class="btn btn-success btn-lg btn-block d-none">Upload File and Submit Form</a>
+                                                                                <a id="btnAddHIIRaiseAssessment" data-tablename="HIIRaiseAssessment" data-columns="id*city*dateCompleted*month*year*quarter*score*raiseScore*raiseFilename*UPDATE_BY*UPDATE_DATE"  data-primarykeycolumn="ID" class="btn btn-success btn-lg btn-block btnAddUpdate d-none">Upload File and Submit Form</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                                <section class="extended">
+                                                                    <div class="row">
+                                                                        <div class="col-sm-12">
+                                                                            <div class="card">
+                                                                                <div class="card-header">
+                                                                                    <div class="card-title-wrap bar-success">
+                                                                                        <h4 class="card-title">Data Entered</h4>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="card">
+                                                                                    <div class="card-body">
+                                                                                        <div id="hiiraiseassessment_div_content" class="card-block">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </section>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </section>
+
+                                        <!-- Input Validation end -->
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tab6" aria-labelledby="base-tabX6">
+                                <div class="content-wrapper">
+                                    <div class="container-fluid"><div class="row">
+                                        <div class="col-sm-12">
+                                            <h2 class="content-header">Integrated facility in-reach</h2>
+                                        </div>
+                                    </div>
+                                        <!-- Input Validation start -->
+                                        <section class="input-validation">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div class="card-block">
+                                                                <form id="formHIIInReach" class="form-horizontal was-validated">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-6 col-md-12">
+                                                                            <div class="formFields">
+                                                                                <div class="form-group">
+                                                                                    <h5>Date Completed <span class="required">*</span></h5>
+                                                                                    <div class="controls">
+                                                                                        <input type="date" id="inpHIIInReachdateCompleted" class="form-control" name="date" required>
+                                                                                        <div class="help-block"></div></div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <h5>City<span class="required">*</span></h5>
+                                                                                    <div class="controls">
+                                                                                        <input id="inpHIIInReachcity" type="text" name="text" class="form-control inpCity" readonly value="0">
+                                                                                        <div class="valid-feedback">Good to Go!</div>
+                                                                                        <div class="invalid-feedback">Please fill out this field.</div>
+                                                                                        <div class="help-block"></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <h5>Name of Health Facility <span class="required">*</span></h5>
+                                                                                    <div class="controls divHIIInReachhealthFacilityId">
+
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <h5>By Whom<span class="required">*</span></h5>
+                                                                                    <div class="controls divHIIInReachcoachId">
+
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+
+                                                                                    <div data-tablename="HIIInreach" class="controls Checklist hiichecklist">
+                                                                                        <h5>Checklist <span class="required">*</span></h5>
+                                                                                        <div class="form-check form-switch">
+                                                                                            <input class="form-check-input" type="checkbox" id="2chk1">
+                                                                                            <label class="form-check-label" for="2chk1">1.	Availability of a competent and well equipped in-reach team consist of skilled staff with readily available of FP commodities and adequate equipment.
+                                                                                                <b> (Please probe to confirm availability of doctor and support staff with adequate equipment to offer long-term and permanent FP methods)</b>
+                                                                                            </label>
+                                                                                        </div>
+                                                                                        <div class="form-check form-switch">
+                                                                                            <input class="form-check-input" type="checkbox" id="2chk2">
+                                                                                            <label class="form-check-label" for="2chk2">2.	Monthly/quarterly schedule of in-reach activities to facilitate in-reach team to select and prioritize facilities where in-reach events are to be planned.
+                                                                                                <b>(Please review the in-reach schedule)</b>
+                                                                                            </label>
+                                                                                        </div>
+                                                                                        <div class="form-check form-switch">
+                                                                                            <input class="form-check-input" type="checkbox" id="2chk3">
+                                                                                            <label class="form-check-label" for="2chk3">3.	Effective community mobilization strategies are used  for in-reach events planned and conducted during a month.<b>(Please review activity reports to ascertain about community mobilization activities performed  through community health workers, public announcements made through different sources and distribution of flyers,. Probe the in-reach team and facility manager for more clarity.)</b></label>
+                                                                                        </div>
+                                                                                        <div class="form-check form-switch">
+                                                                                            <input class="form-check-input" type="checkbox" id="2chk4">
+                                                                                            <label class="form-check-label" for="2chk4">4.  Post in-reach events meetings were held to review progress made against expectation and identification of any operational or logistical issues faced that will be focused/resolved during the implementation of future integrated In-reach activities.
+                                                                                                <b>(Please review activity reports)</b> .</label>
+                                                                                        </div>
+                                                                                        <div class="form-check form-switch">
+                                                                                            <input class="form-check-input" type="checkbox" id="2chk5">
+                                                                                            <label class="form-check-label" for="2chk5">5.	Service statistics data captured in the facility data collection tools and timely  reflection in the district, province and national reports of -CLMIS.
+                                                                                                <b>(Please review the facility FP service data collection tools and CLMIS summary reports)</b>
+                                                                                            </label>
+                                                                                        </div>
+
+
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <h5>Score %<span class="required">*</span></h5>
+                                                                                    <div class="controls">
+                                                                                        <input id="inpHIIInreachscore" type="text" name="text" class="form-control" readonly value="0">
+                                                                                        <div class="valid-feedback">Good to Go!</div>
+                                                                                        <div class="invalid-feedback">Please fill out this field.</div>
+                                                                                        <div class="help-block"></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <div class="controls">
+                                                                                        <input class="d-none" id="inpHIIInReachinReachFilename" type="text" name="text" class="form-control" readonly value="0" >
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="block-button">
+                                                                                <a id="btnHIIInReachValidateAndLock" data-tablename="HIIInReach" class="btn btn-success btn-lg btn-block btnValidateAndLock">Validate and Lock</a>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <div class="controls">
+                                                                                    <div class="input-group my-3">
+                                                                                        <div class="mb-3">
+                                                                                            <label for="inpInReachFile" class="form-label">In Reach Documents</label>
+                                                                                            <input class="form-control form-control-sm" id="inpInReachFile" type="file">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-lg-6 col-md-12">
+                                                                            <div class="block-button">
+                                                                                <a id="btnUploadHIIInReach" class="btn btn-success btn-lg btn-block d-none">Upload File and Submit Form</a>
+                                                                                <a id="btnAddHIIInReach" data-tablename="HIIInReach" data-columns="id*city*dateCompleted*score*coachId*healthFacilityId*inReachFilename*UPDATE_BY*UPDATE_DATE"  data-primarykeycolumn="ID" class="btn btn-success btn-lg btn-block btnAddUpdate d-none">Upload File and Submit Form</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                                <section class="extended">
+                                                                    <div class="row">
+                                                                        <div class="col-sm-12">
+                                                                            <div class="card">
+                                                                                <div class="card-header">
+                                                                                    <div class="card-title-wrap bar-success">
+                                                                                        <h4 class="card-title">Data Entered</h4>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="card">
+                                                                                    <div class="card-body">
+                                                                                        <div id="hiiinreach_div_content" class="card-block">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </section>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </section>
+
+                                        <!-- Input Validation end -->
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tab7" aria-labelledby="base-tabX7">
+                                <div class="content-wrapper">
+                                    <div class="container-fluid"><div class="row">
+                                        <div class="col-sm-12">
+                                            <h2 class="content-header">Integrated facility out-reach</h2>
+                                        </div>
+                                    </div>
+                                        <!-- Input Validation start -->
+                                        <section class="input-validation">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div class="card-block">
+                                                                <form id="formHIIOutReach" class="form-horizontal was-validated">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-6 col-md-12">
+                                                                            <div class="formFields">
+                                                                                <div class="form-group">
+                                                                                    <h5>Date Completed <span class="required">*</span></h5>
+                                                                                    <div class="controls">
+                                                                                        <input type="date" id="inpHIIOutReachdateCompleted" class="form-control" name="date" required>
+                                                                                        <div class="help-block"></div></div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <h5>City<span class="required">*</span></h5>
+                                                                                    <div class="controls">
+                                                                                        <input id="inpHIIOutReachcity" type="text" name="text" class="form-control inpCity" readonly value="0">
+                                                                                        <div class="valid-feedback">Good to Go!</div>
+                                                                                        <div class="invalid-feedback">Please fill out this field.</div>
+                                                                                        <div class="help-block"></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <h5>Name of Health Facility <span class="required">*</span></h5>
+                                                                                    <div class="controls divHIIOutReachhealthFacilityId">
+
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <h5>By Whom<span class="required">*</span></h5>
+                                                                                    <div class="controls divHIIOutReachcoachId">
+
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+
+                                                                                    <div data-tablename="HIIOutReach" class="controls Checklist hiichecklist">
+                                                                                        <h5>Checklist <span class="required">*</span></h5>
+                                                                                        <div class="form-check form-switch">
+                                                                                            <input class="form-check-input" type="checkbox" id="3chk1">
+                                                                                            <label class="form-check-label" for="3chk1">1.	Health facility staff held a  planning meeting with sub county/District team to approach out-reach community. </label>
+                                                                                        </div>
+                                                                                        <div class="form-check form-switch">
+                                                                                            <input class="form-check-input" type="checkbox" id="3chk2">
+                                                                                            <label class="form-check-label" for="3chk2">2.	Effective community mobilization strategy  used for out-reach event planned and conducted during a month.
+                                                                                               <b> (Please review  community mobilization activity reports to ascertain about community activities performed through community health workers, public announcements made through different source and distribution of flyers. Probe the in-reach team and facility manager for more clarity)</b>
+                                                                                            </label>
+                                                                                        </div>
+                                                                                        <div class="form-check form-switch">
+                                                                                            <input class="form-check-input" type="checkbox" id="3chk3">
+                                                                                            <label class="form-check-label" for="3chk3">3.	Service integration occurred during outreach for type of services offered alongside FP/RH.
+                                                                                                <b>(Please review activity reports, Probe H/F or Unit In-Charge )</b></label>
+                                                                                        </div>
+                                                                                        <div class="form-check form-switch">
+                                                                                            <input class="form-check-input" type="checkbox" id="3chk4">
+                                                                                            <label class="form-check-label" for="3chk4">4.	Post outreach event meetings were held to review progress against the expectation and identify any operational or logistical issues/problem faced  that will be focused so that not to reoccur in the implementation of future integrated outreach activities.
+                                                                                                <b>(Please review activity reports)</b>
+                                                                                            </label></div>
+                                                                                        <div class="form-check form-switch">
+                                                                                            <input class="form-check-input" type="checkbox" id="3chk5">
+                                                                                            <label class="form-check-label" for="3chk5">5.	Service statistics data captured in the facility data collection tools and properly reflected in the district, provincial and national reports of CLMIS.
+                                                                                                <b>(Please review the facility FP service data collection tools and CLMIS summary reports)</b>
+                                                                                            </label>
+                                                                                        </div>
+
+
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <h5>Score %<span class="required">*</span></h5>
+                                                                                    <div class="controls">
+                                                                                        <input id="inpHIIOutReachscore" type="text" name="text" class="form-control" readonly value="0">
+                                                                                        <div class="valid-feedback">Good to Go!</div>
+                                                                                        <div class="invalid-feedback">Please fill out this field.</div>
+                                                                                        <div class="help-block"></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <div class="controls">
+                                                                                        <input class="d-none" id="inpHIIOutReachoutReachFilename" type="text" name="text" class="form-control" readonly value="0" >
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="block-button">
+                                                                                <a id="btnHIIOutReachValidateAndLock" data-tablename="HIIOutReach" class="btn btn-success btn-lg btn-block btnValidateAndLock">Validate and Lock</a>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <div class="controls">
+                                                                                    <div class="input-group my-3">
+                                                                                        <div class="mb-3">
+                                                                                            <label for="inpOutReachFile" class="form-label">Out Reach Documents</label>
+                                                                                            <input class="form-control form-control-sm" id="inpOutReachFile" type="file">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-lg-6 col-md-12">
+                                                                            <div class="block-button">
+                                                                                <a id="btnUploadHIIOutReach" class="btn btn-success btn-lg btn-block d-none">Upload File and Submit Form</a>
+                                                                                <a id="btnAddHIIOutReach" data-tablename="HIIOutReach" data-columns="id*city*dateCompleted*score*coachId*healthFacilityId*outReachFilename*UPDATE_BY*UPDATE_DATE"  data-primarykeycolumn="ID" class="btn btn-success btn-lg btn-block btnAddUpdate d-none">Upload File and Submit Form</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                                <section class="extended">
+                                                                    <div class="row">
+                                                                        <div class="col-sm-12">
+                                                                            <div class="card">
+                                                                                <div class="card-header">
+                                                                                    <div class="card-title-wrap bar-success">
+                                                                                        <h4 class="card-title">Data Entered</h4>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="card">
+                                                                                    <div class="card-body">
+                                                                                        <div id="hiioutreach_div_content" class="card-block">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </section>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </section>
+
+                                        <!-- Input Validation end -->
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tab8" aria-labelledby="base-tabX8">
+                                <div class="content-wrapper">
+                                    <div class="container-fluid"><div class="row">
+                                        <div class="col-sm-12">
+                                            <h2 class="content-header">Family Health Days</h2>
+                                        </div>
+                                    </div>
+                                        <!-- Input Validation start -->
+                                        <section class="input-validation">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div class="card-block">
+                                                                <form id="formHIIFHD" class="form-horizontal was-validated">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-6 col-md-12">
+                                                                            <div class="formFields">
+                                                                                <div class="form-group">
+                                                                                    <h5>Date Completed <span class="required">*</span></h5>
+                                                                                    <div class="controls">
+                                                                                        <input type="date" id="inpHIIFHDdateCompleted" class="form-control" name="date" required>
+                                                                                        <div class="help-block"></div></div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <h5>City<span class="required">*</span></h5>
+                                                                                    <div class="controls">
+                                                                                        <input id="inpHIIFHDcity" type="text" name="text" class="form-control inpCity" readonly value="0">
+                                                                                        <div class="valid-feedback">Good to Go!</div>
+                                                                                        <div class="invalid-feedback">Please fill out this field.</div>
+                                                                                        <div class="help-block"></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <h5>Name of Health Facility <span class="required">*</span></h5>
+                                                                                    <div class="controls divHIIFHDhealthFacilityId">
+
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <h5>By Whom<span class="required">*</span></h5>
+                                                                                    <div class="controls divHIIFHDcoachId">
+
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+
+                                                                                    <div data-tablename="HIIFHD" class="controls Checklist hiichecklist">
+                                                                                        <h5>Checklist <span class="required">*</span></h5>
+                                                                                        <div class="form-check form-switch">
+                                                                                            <input class="form-check-input" type="checkbox" id="4chk1">
+                                                                                            <label class="form-check-label" for="4chk1">1.	A comprehensive  monthly schedule of FHD is available at each facility</label>
+                                                                                        </div>
+                                                                                        <div class="form-check form-switch">
+                                                                                            <input class="form-check-input" type="checkbox" id="4chk2">
+                                                                                            <label class="form-check-label" for="4chk2">2.	A team of skilled service providers is available on time with FP commodities and adequate equipment to offer services to the clients on FHD events</label>
+                                                                                        </div>
+                                                                                        <div class="form-check form-switch">
+                                                                                            <input class="form-check-input" type="checkbox" id="4chk3">
+                                                                                            <label class="form-check-label" for="4chk3">3.	Effective community mobilization strategy is used for FHD to generate FP clients</label>
+                                                                                        </div>
+                                                                                        <div class="form-check form-switch">
+                                                                                            <input class="form-check-input" type="checkbox" id="4chk4">
+                                                                                            <label class="form-check-label" for="4chk4">4.	Post-outreach event meetings were held to review  progress against expectation and to identify any operational or logistical issues that will be resolved/focused  during implementation of future integrated outreach activities.</label></div>
+                                                                                        <div class="form-check form-switch">
+                                                                                            <input class="form-check-input" type="checkbox" id="4chk5">
+                                                                                            <label class="form-check-label" for="4chk5">5.	Service statistics data captured in the facility summary tools and properly reflected in the district, provincial and national reports of CLMIS</label>
+                                                                                        </div>
+
+
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <h5>Score %<span class="required">*</span></h5>
+                                                                                    <div class="controls">
+                                                                                        <input id="inpHIIFHDscore" type="text" name="text" class="form-control" readonly value="0">
+                                                                                        <div class="valid-feedback">Good to Go!</div>
+                                                                                        <div class="invalid-feedback">Please fill out this field.</div>
+                                                                                        <div class="help-block"></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <div class="controls">
+                                                                                        <input class="d-none" id="inpHIIFHDfhdFilename" type="text" name="text" class="form-control" readonly value="0" >
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="block-button">
+                                                                                <a id="btnHIIFHDValidateAndLock" data-tablename="HIIFHD" class="btn btn-success btn-lg btn-block btnValidateAndLock">Validate and Lock</a>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <div class="controls">
+                                                                                    <div class="input-group my-3">
+                                                                                        <div class="mb-3">
+                                                                                            <label for="inpFHDFile" class="form-label">FHD Documents</label>
+                                                                                            <input class="form-control form-control-sm" id="inpFHDFile" type="file">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-lg-6 col-md-12">
+                                                                            <div class="block-button">
+                                                                                <a id="btnUploadHIIFHD" class="btn btn-success btn-lg btn-block d-none">Upload File and Submit Form</a>
+                                                                                <a id="btnAddHIIFHD" data-tablename="HIIFHD" data-columns="id*city*dateCompleted*score*coachId*healthFacilityId*fhdFilename*UPDATE_BY*UPDATE_DATE"  data-primarykeycolumn="ID" class="btn btn-success btn-lg btn-block btnAddUpdate d-none">Upload File and Submit Form</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                                <section class="extended">
+                                                                    <div class="row">
+                                                                        <div class="col-sm-12">
+                                                                            <div class="card">
+                                                                                <div class="card-header">
+                                                                                    <div class="card-title-wrap bar-success">
+                                                                                        <h4 class="card-title">Data Entered</h4>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="card">
+                                                                                    <div class="card-body">
+                                                                                        <div id="hiifhd_div_content" class="card-block">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </section>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </section>
+
+                                        <!-- Input Validation end -->
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tab9" aria-labelledby="base-tabX9">
+                                <div class="content-wrapper">
+                                    <div class="container-fluid"><div class="row">
+                                        <div class="col-sm-12">
+                                            <h2 class="content-header">Knowledge Hub</h2>
+                                        </div>
+                                    </div>
+                                        <!-- Input Validation start -->
+                                        <section class="input-validation">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div class="card-block">
+                                                                <form id="formKnowledgeHub" class="form-horizontal was-validated">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-6 col-md-12">
+                                                                            <div class="formFields">
+                                                                                <div class="form-group">
+                                                                                    <h5>Date Completed <span class="required">*</span></h5>
+                                                                                    <div class="controls">
+                                                                                        <input type="date" id="inpKnowledgeHubDate" class="form-control" name="date" required>
+                                                                                        <div class="help-block"></div></div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <h5>City<span class="required">*</span></h5>
+                                                                                    <div class="controls">
+                                                                                        <input id="inpKnowledgeHubcity" type="text" name="text" class="form-control inpCity" readonly value="0">
+                                                                                        <div class="valid-feedback">Good to Go!</div>
+                                                                                        <div class="invalid-feedback">Please fill out this field.</div>
+                                                                                        <div class="help-block"></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <div class="controls">
+                                                                                    <div class="input-group my-3">
+                                                                                        <div class="mb-3">
+                                                                                            <label for="inpKnowledgeHubFile" class="form-label">Select Document</label>
+                                                                                            <input class="form-control form-control-sm" id="inpKnowledgeHubFile" type="file">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <h5>Type<span class="required">*</span></h5>
+                                                                                <div class="controls">
+                                                                                    <select id="inpKnowledgeHubtype" name="interested" class="form-control" required>
+                                                                                        <option value="" selected="" disabled="">Select Type</option>
+                                                                                        <option value="QPR"> Quarterly Progress Report </option>
+                                                                                        <option value="GMR"> Geography Monthly Report </option>
+                                                                                        <option value="TCICostByPhase"> TCI Cost By Phase </option>
+                                                                                        <option value="CLMISDHISDataset"> CLMIS / DHIS Dataset </option>
+                                                                                    </select>
+                                                                                    <div class="valid-feedback">Good to Go!</div>
+                                                                                    <div class="invalid-feedback">Please fill out this field.</div>
+                                                                                    <div class="help-block"></div></div>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <h5>For<span class="required">*</span></h5>
+                                                                                <div class="controls">
+                                                                                    <select id="inpKnowledgeHubfor" name="interested" class="form-control" required>
+                                                                                        <option value="" selected="" disabled="">Select for whom you are uploading</option>
+                                                                                        <option value="donor"> Donor </option>
+                                                                                        <option value="internal"> Internal </option>
+                                                                                    </select>
+                                                                                    <div class="valid-feedback">Good to Go!</div>
+                                                                                    <div class="invalid-feedback">Please fill out this field.</div>
+                                                                                    <div class="help-block"></div></div>
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-lg-6 col-md-12">
+                                                                            <div class="block-button">
+                                                                                <a id="btnUploadKnowledgeHub" class="btn btn-success btn-lg btn-block d-none">Upload File and Submit Form</a>
+                                                                                <a id="btnAddKnowledgeHub" data-tablename="KnowledgeHub" data-columns="id*city*dateCompleted*score*coachId*healthFacilityId*fhdFilename*UPDATE_BY*UPDATE_DATE"  data-primarykeycolumn="ID" class="btn btn-success btn-lg btn-block btnAddUpdate">Upload File and Submit Form</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                                <section class="extended">
+                                                                    <div class="row">
+                                                                        <div class="col-sm-12">
+                                                                            <div class="card">
+                                                                                <div class="card-header">
+                                                                                    <div class="card-title-wrap bar-success">
+                                                                                        <h4 class="card-title">Data Entered</h4>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="card">
+                                                                                    <div class="card-body">
+                                                                                        <div id="knowledgehub_div_content" class="card-block">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </section>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </section>
+
+                                        <!-- Input Validation end -->
+                                    </div>
+
+                                </div>
+                            </div>
                             <div class="modal hide" id="pleaseWaitDialog" data-backdrop="static" data-keyboard="false">
                                 <div class="modal-body">
                                     <div id="ajax_loader">
@@ -1219,7 +2193,7 @@
     </div>
 </aside>
 <!-- BEGIN VENDOR JS-->
- <script src="./app-assets/vendors/js/core/jquery-3.3.1.min.js"></script>
+<script src="./app-assets/vendors/js/core/jquery-3.3.1.min.js"></script>
 <script src="./app-assets/vendors/js/core/popper.min.js"></script>
 <script src="./app-assets/vendors/js/core/bootstrap.min.js"></script>
 <script src="./app-assets/vendors/js/perfect-scrollbar.jquery.min.js"></script>
