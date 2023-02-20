@@ -1,10 +1,12 @@
 
 
-$('#btnAddCoachee').click(function(){
-    var selectedOption = $('#inpCoachingLogcoachId  option:selected').text();
-    var selectedId = $('#inpCoachingLogcoachId  option:selected').val();
+$('.btnAddCoachee').click(function(){
+    var tablename = $(this).attr("data-tablename");
+    var selectedOption = $('#inp'+tablename+'coachId  option:selected').text();
+    var selectedId = $('#inp'+tablename+'coachId  option:selected').val();
     var alreadyExist = false;
-    $('#coacheeList li').each(function(i) {
+    var listSelector = "#"+tablename+"coacheeList";
+    $(listSelector+' li').each(function(i) {
         var id = $(this).attr('data-rowId');
         if($(this).attr('data-rowId')===selectedId){
             alreadyExist=true;
@@ -14,7 +16,7 @@ $('#btnAddCoachee').click(function(){
 
         var html = "<li id='item" + selectedId + "' data-rowId='" + selectedId + "' href=\"#\" class=\"list-group-item \">" + selectedOption + "<i class=\"fa fa-remove fa-2x pull-right btnDelCoachee\" style=\"color: red;\"></i>\t" +
             "</li>";
-        $('#coacheeList').append(html);
+        $(listSelector).append(html);
     }
 
 });
@@ -22,13 +24,13 @@ $(document).on("click", ".btnDelCoachee", function() {
     $(this).parent().remove();
 
 });
-$('#btnAddCoachingLog').click(function(){
-    var urlAddButton= AllConstant.baseURL + "/addCoachingLog";
+$('.btnAddForm').click(function(){
+    var urlAddButton= AllConstant.baseURL + "/addFormCoachee";
     var tablename = $(this).attr("data-tablename");
     var primarykey = $(this).attr("data-primarykeycolumn");
     var id ="";
 
-    $('#coacheeList li').each(function(i) {
+    $('#'+tablename+'coacheeList li').each(function(i) {
         if(id!==""){
             id +="&";
         }
@@ -39,7 +41,7 @@ $('#btnAddCoachingLog').click(function(){
 
     if($('#form'+tablename).valid()){
         var json = getJSON(this);
-        var dataJSON = {"token":getCookie("token"),"data":json, "ids":id};
+        var dataJSON = {"token":getCookie("token"),"data":json, "ids":id, "tableName":tablename};
         $('#pleaseWaitDialog').modal();
         $.ajax({
             type: "GET",
@@ -54,9 +56,11 @@ $('#btnAddCoachingLog').click(function(){
                     getData(tablename,primarykey);
                     toastr.success("Successful!","Entry completed!");
                     $('#form'+tablename)[0].reset();
-                    $('#coacheeList li').each(function(i) {
+                    $('#'+tablename+'coacheeList li').each(function(i) {
+
                         $(this).remove();
                     });
+                    populateForm();
 
                 }else{
                     toastr.error("ERROR!","Unsuccessful entry because of undefined error!");
@@ -141,7 +145,7 @@ $('#btnUploadHIIRaiseAssessment').click(function () {
     var filename = "raise_assessment_"+month+"_"+year+"_"+quarter+"_"+lastFive+".xlsx";
 
     uploadFile(urlUpload, filename, $('#inpRaiseFile')[0]);
-    $("#inpHIIRaiseAssessmentraiseFilename").val("<a href='D:\\upload\\"+filename+"'>Excel Raise File</a>");
+    $("#inpHIIRaiseAssessmentraiseFilename").val("<a href='"+AllConstant.base_upload_url+filename+"'>Docx In Reach File</a>");
     $('#btnAddHIIRaiseAssessment').click();
     $('#btnValidateAndLock').click();
 });
@@ -155,7 +159,7 @@ $('#btnUploadHIIInReach').click(function () {
     var filename = "hii_inreach_"+city+"_"+coachId+"_"+healthfacilityId+"_"+lastFive+".docx";
 
     uploadFile(urlUpload, filename, $('#inpInReachFile')[0]);
-    $("#inpHIIInReachinReachFilename").val("<a href='D:\\upload\\"+filename+"'>Docx In Reach File</a>");
+    $("#inpHIIInReachinReachFilename").val("<a href='"+AllConstant.base_upload_url+filename+"'>Docx In Reach File</a>");
     $('#btnAddHIIInReach').click();
     $('#btnHIIInReachValidateAndLock').click();
 });
@@ -170,7 +174,7 @@ $('#btnUploadHIIOutReach').click(function () {
     var filename = "hii_outreach_"+city+"_"+coachId+"_"+healthfacilityId+"_"+lastFive+".docx";
 
     uploadFile(urlUpload, filename, $('#inpOutReachFile')[0]);
-    $("#inpHIIOutReachoutReachFilename").val("<a href='D:\\upload\\"+filename+"'>Docx In Reach File</a>");
+    $("#inpHIIOutReachoutReachFilename").val("<a href='"+AllConstant.base_upload_url+filename+"'>Docx In Reach File</a>");
     $('#btnAddHIIOutReach').click();
     $('#btnHIIOutReachValidateAndLock').click();
 });
@@ -185,7 +189,7 @@ $('#btnUploadHIIFHD').click(function () {
     var filename = "hii_fhd_"+city+"_"+coachId+"_"+healthfacilityId+"_"+lastFive+".docx";
 
     uploadFile(urlUpload, filename, $('#inpFHDFile')[0]);
-    $("#inpHIIFHDfhdFilename").val("<a href='D:\\upload\\"+filename+"'>Docx FHD File</a>");
+    $("#inpHIIFHDfhdFilename").val("<a href='"+AllConstant.base_upload_url+filename+"'>Docx In Reach File</a>");
     $('#btnAddHIIFHD').click();
     $('#btnHIIFHDValidateAndLock').click();
 });

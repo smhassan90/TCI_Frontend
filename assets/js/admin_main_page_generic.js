@@ -289,7 +289,7 @@ function getData(tableName, primarykey ){
         type: "GET",
         url: url,
         contentType: "application/json",
-        data:{tableName:tableName},
+        data:{token:getCookie("token"),tableName:tableName},
         dataType: "text",
         success: function (data) {
             $('#pleaseWaitDialog').modal('hide');
@@ -395,6 +395,12 @@ function getJSON(selector){
 }
 
 function populateForm(){
+    if(getCookie("type")==="2"){
+        $('.dataentry_form').addClass('d-none');
+    }else if(getCookie("type")==="1"){
+        $('.dataentry_form').removeClass('d-none');
+    }
+
     $('.inpCity').val(getCookie("city"));
 
 }

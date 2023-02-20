@@ -9,7 +9,6 @@ $(document).ready(function(){
     $('#btnLogin').click(function(){
 
         var id = $('#inputID').val();
-        var id = $('#inputID').val();
         var pass = $('#inputPass').val();
         var staffType = 3;
         var url = AllConstant.baseURL + "/loginServerAttempt";
@@ -30,7 +29,7 @@ $(document).ready(function(){
                             setCookie('token', loginResponse.token,365);
                             setCookie('city', loginResponse.user.city,365);
                             setCookie('role', loginResponse.user.role,365);
-                            setCookie('type', loginResponse.type,365);
+                            setCookie('type', loginResponse.user.userType,365);
                             setCookie('name', loginResponse.user.name,365);
                             setCookie('username', loginResponse.user.userName,365);
                             swal("Successfully!", loginResponse.user.NAME+", You are logged in", "success").done();
