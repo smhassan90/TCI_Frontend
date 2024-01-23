@@ -53,7 +53,7 @@
                         <a id="dashboard_menu"  data-tablename="dashboard" data-primarykeycolumn="ID" class="menu-item"><i class="icon-home"></i><span data-i18n="" class="menu-title">Dashboard</span></a>
                     </li>
                     <li class="nav-item">
-                        <a id="user_menu"  data-tablename="user" data-primarykeycolumn="ID" class="menu-item"><i class="icon-user"></i><span data-i18n="" class="menu-title">user</span></a>
+                        <a id="user_menu"  data-tablename="user" data-primarykeycolumn="ID" class="menu-item"><i class="icon-user"></i><span data-i18n="" class="menu-title">User</span></a>
                     </li>
                     <li class="nav-item">
                         <a id="add_facility"  data-tablename="addfacility" data-primarykeycolumn="ID" class="menu-item"><i class="icon-plus"></i><span data-i18n="" class="menu-title">Add Facility</span></a>
@@ -61,6 +61,25 @@
                     <li class="nav-item">
                         <a id="add_facilitystaff"  data-tablename="addfacilitystaff" data-primarykeycolumn="ID" class="menu-item"><i class="icon-plus"></i><span data-i18n="" class="menu-title">Add Facility Staff</span></a>
                     </li>
+
+                    <li class="nav-item">
+                        <a id="add_fpchampion"  data-tablename="fpchampion" data-primarykeycolumn="ID" class="menu-item"><i class="icon-plus"></i><span data-i18n="" class="menu-title">Add FPChampion</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="add_fpchampionactivity"  data-tablename="fpchampionactivity" data-primarykeycolumn="ID" class="menu-item"><i class="icon-plus"></i><span data-i18n="" class="menu-title">Add FPC Activity</span></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a id="add_ltvoucher"  data-tablename="ltvoucher" data-primarykeycolumn="ID" class="menu-item"><i class="icon-wallet"></i><span data-i18n="" class="menu-title">L&T Voucher</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="add_tadavoucher"  data-tablename="tadavoucher" data-primarykeycolumn="ID" class="menu-item"><i class="icon-wallet"></i><span data-i18n="" class="menu-title">TADA Voucher</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="add_dtc"  data-tablename="dtc" data-primarykeycolumn="ID" class="menu-item"><i class="icon-wallet"></i><span data-i18n="" class="menu-title">DTC/DHMT</span></a>
+                    </li>
+
+
                     <li class="nav-item">
                         <a id="qaulity_checklist"  data-tablename="qualitychecklist" data-primarykeycolumn="ID" class="menu-item"><i class="icon-info"></i><span data-i18n="" class="menu-title">Quality CheckList</span></a>
                     </li>
@@ -310,6 +329,599 @@
             </div>
 
         </section>
+      
+<section id="ltvoucher_main_form" class="main-content hide_block">
+    <div class="content-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-6 col-lg-12 col-12">
+                    <div class="card">
+                        <div class="card-body" style="width: 100%; padding: 20px;">
+                            <h2>Lunch & Transportation Voucher </h2>
+                            <form id="addActivityDetailsForm">
+                                <div class="form-group">
+                                    <label for="city">City</label>
+                                    <select class="form-control" id="city" name="city" required>
+                                        <option value="Lahore">Lahore</option>
+                                                <option value="Gujranwala">Gujranwala</option>
+                                                <option value="Rawalpindi">Rawalpindi</option>
+                                                <option value="Faisalabad">Faisalabad</option>
+                                                <option value="Multan">Multan</option>
+                                                <option value="Khanewal">Khanewal</option>
+                                                <option value="Karachi - West">Karachi - West</option>
+                                                <option value="Karachi - East">Karachi - East</option>
+                                                <option value="Karachi - South">Karachi - South</option>
+                                                <option value="Karachi - Center">Karachi - Center</option>
+                                                <option value="Korangi">Korangi</option>
+                                                <option value="Malir">Malir</option>
+                                                <option value="Kemari">Kemari</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="facility">Facility</label>
+                                    <select class="form-control" id="facility" name="facility" required>
+                                        <option value="Facility1">Facility 1</option>
+                                        <option value="Facility2">Facility 2</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="activity">Activity</label>
+                                    <select class="form-control" id="activity" name="activity" required>
+                                        <option value="FHD">FHD</option>
+                                        <option value="Satellite Camp">Satellite Camp</option>
+                                        <option value="MSU">MSU</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="department">Department</label>
+                                    <select class="form-control" id="department" name="department" required>
+                                        <option value="DoH">DoH</option>
+                                        <option value="PWD">PWD</option>
+                                        <option value="PPHI">PPHI</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="activityDate">Date</label>
+                                    <input type="date" class="form-control" id="activityDate" name="activityDate" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" class="form-control" value="Name" id="name" name="name" readonly
+                                        placeholder="Enter your name">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="designation">Designation</label>
+                                    <select class="form-control" id="designation" name="designation" required>
+                                        <option value="WMO/Facility Incharge">WMO/Facility Incharge</option>
+                                        <option value="LHV">LHV</option>
+                                        <option value="LHS">LHS</option>
+                                        <option value="LHW">LHW</option>
+                                        <option value="FWW">FWW</option>
+                                        <option value="FWA/M">FWA/M</option>
+                                        <option value="FWA/F">FWA/F</option>
+                                        <option value="SMZ">SMZ</option>
+                                        <option value="Mid Wife">Mid Wife</option>
+                                        <option value="CEO DHA/DHO">CEO DHA/DHO</option>
+                                        <option value="DC IRMNCH/Focal Person">DC IRMNCH/Focal Person</option>
+                                        <option value="M&E/SO">M&E/SO</option>
+                                        <option value="DPWO">DPWO</option>
+                                        <option value="TPWO">TPWO</option>
+                                        <option value="Driver">Driver</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="cnic">CNIC</label>
+                                    <input type="text" class="form-control" id="cnic" value="1234567891013" name="cnic" required pattern="[0-9]{13}" title="Enter 13 digits" readonly
+                                        placeholder="Enter CNIC">
+                                </div>
+
+                            
+                                 <div class="form-group">
+                                    <label for="iban">IBAN</label>
+                                    <input type="text" class="form-control" id="iban" value="1234567891013" name="iban" required placeholder="Enter IBAN" readonly>
+                                </div>
+
+                                    
+
+                                <div class="form-group">
+                                    <label for="contact">Contact</label>
+                                    <input type="text" class="form-control" value="03001111111" id="contact" name="contact" required pattern="[0-9]{11}" title="Enter 11 digits" readonly
+                                     placeholder="Enter contact number">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="ratePerDay">Rate/Day</label>
+                                    <input type="number" value="1500" class="form-control" id="ratePerDay" name="ratePerDay" readonly>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="numberOfDays">Number of Days</label>
+                                    <input type="number" class="form-control" id="numberOfDays" name="numberOfDays" required placeholder="Enter number of days">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="amount">Amount</label>
+                                    <input type="text" class="form-control" id="amount" name="amount" readonly>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="attachment1">L&T Voucher</label>
+                                    <input type="file" class="form-control-file" id="attachment1" name="attachment1">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="attachment2">Attendance Sheet</label>
+                                    <input type="file" class="form-control-file" id="attachment2" name="attachment2">
+                                </div>
+
+                                <button type="submit" class="btn btn-info">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="tadavoucher_main_form" class="main-content hide_block">
+    <div class="content-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-6 col-lg-12 col-12">
+                    <div class="card">
+                        <div class="card-body" style="width: 100%; padding: 20px;">
+                            <h2>TADA Voucher</h2>
+                            <form id="addTrainingDetailsForm">
+                                <div class="form-group">
+                                    <label for="city">City</label>
+                                    <select class="form-control" id="city" name="city" required>
+                                        <option value="Gujranwala">Gujranwala</option>
+                                        <option value="Rawalpindi">Rawalpindi</option>
+                                        <option value="Faisalabad">Faisalabad</option>
+                                        <option value="Multan">Multan</option>
+                                        <option value="Khanewal">Khanewal</option>
+                                        <option value="Karachi - West">Karachi - West</option>
+                                        <option value="Karachi - East">Karachi - East</option>
+                                        <option value="Karachi - South">Karachi - South</option>
+                                        <option value="Karachi - Center">Karachi - Center</option>
+                                        <option value="Korangi">Korangi</option>
+                                        <option value="Malir">Malir</option>
+                                        <option value="Kemari">Kemari</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="facility">Facility</label>
+                                    <select class="form-control" id="facility" name="facility" required>
+                                        <option value="Facility1">Facility 1</option>
+                                        <option value="Facility2">Facility 2</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="training">Training</label>
+                                    <select class="form-control" id="training" name="training" required>
+                                        <option value="Master Coaches">Master Coaches</option>
+                                        <option value="FP">FP</option>
+                                        <option value="PPFP">PPFP</option>
+                                        <option value="WSO">WSO</option>
+                                        <option value="Data">Data</option>
+                                        <option value="OJT">OJT</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="department">Department</label>
+                                    <select class="form-control" id="department" name="department" required>
+                                        <option value="DoH">DoH</option>
+                                        <option value="PWD">PWD</option>
+                                        <option value="PPHI">PPHI</option>
+                                        <option value="DoH & PWD">DoH & PWD</option>
+                                        <option value="DoH, PWD & PPHI">DoH, PWD & PPHI</option>
+                                        <option value="DoH & PPHI">DoH & PPHI</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="trainingDate">Date</label>
+                                    <input type="date" class="form-control" id="trainingDate" name="trainingDate" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" class="form-control" value="name" id="name" name="name" readonly
+                                        placeholder="Enter your name">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="designation">Designation</label>
+                                    <select class="form-control" id="designation1" name="designation" required>
+                                        <option value="WMO/Facility Incharge">WMO/Facility Incharge</option>
+                                        <option value="LHV">LHV</option>
+                                        <option value="LHS">LHS</option>
+                                        <option value="LHW">LHW</option>
+                                        <option value="FWW">FWW</option>
+                                        <option value="FWA/M">FWA/M</option>
+                                        <option value="FWA/F">FWA/F</option>
+                                        <option value="SMZ">SMZ</option>
+                                        <option value="Mid Wife">Mid Wife</option>
+                                        <option value="CEO DHA/DHO">CEO DHA/DHO</option>
+                                        <option value="DC IRMNCH/Focal Person">DC IRMNCH/Focal Person</option>
+                                        <option value="M&E/SO">M&E/SO</option>
+                                        <option value="DPWO">DPWO</option>
+                                        <option value="TPWO">TPWO</option>
+                                        <option value="Driver">Driver</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="bps">BPS</label>
+                                    <input type="text" value = "18" class="form-control" id="bps" name="bps" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cnic">CNIC</label>
+                                    <input type="text" value="1234567891013" class="form-control" id="cnic" name="cnic" readonly
+                                        pattern="[0-9]{13}" title="Enter 13 digits" placeholder="Enter CNIC">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="iban">IBAN</label>
+                                    <input type="text" class="form-control" value="1234567891013" id="iban" name="iban" readonly
+                                        placeholder="Enter IBAN">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="contact">Contact</label>
+                                    <input type="text" class="form-control" id="contact" value="03001111111" name="contact" readonly
+                                        pattern="[0-9]{11}" title="Enter 11 digits" placeholder="Enter contact number">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="ratePerDay">Rate/Day</label>
+                                    <input type="number" class="form-control" value="1500" id="ratePerDay1" name="ratePerDay" readonly>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="numberOfDays">No. of Days</label>
+                                    <input type="number" class="form-control" id="numberOfDays1" name="numberOfDays" required
+                                        placeholder="Enter number of days">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="amount">Amount</label>
+                                    <input type="text" class="form-control" id="amount1" name="amount" readonly>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="attachment">Attendance Sheet</label>
+                                    <input type="file" class="form-control-file" id="attachment" name="attachment">
+                                </div>
+
+                                <button type="submit" class="btn btn-info">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // JavaScript code to calculate rate per day and amount based on designation
+    document.getElementById('designation1').addEventListener('change', function () {
+        var ratePerDayField = document.getElementById('ratePerDay1');
+        var designation = this.value;
+
+        switch (designation) {
+            case 'WMO/Facility Incharge':
+                ratePerDayField.value = 1500;
+                break;
+            case 'LHV':
+            case 'LHS':
+            case 'LHW':
+            case 'FWW':
+            case 'FWA/M':
+            case 'FWA/F':
+            case 'SMZ':
+            case 'Mid Wife':
+                ratePerDayField.value = 1000;
+                break;
+            case 'CEO DHA/DHO':
+                ratePerDayField.value = 2000;
+                break;
+            case 'DC IRMNCH/Focal Person':
+                ratePerDayField.value = 1500;
+                break;
+            case 'M&E/SO':
+            case 'DPWO':
+            case 'TPWO':
+                ratePerDayField.value = 1000;
+                break;
+            case 'Driver':
+                ratePerDayField.value = 500;
+                break;
+            default:
+                ratePerDayField.value = 0;
+        }
+    });
+
+    // JavaScript code to calculate amount based on rate per day and number of days
+    document.getElementById('numberOfDays1').addEventListener('input', function () {
+        var ratePerDay = parseInt(document.getElementById('ratePerDay1').value, 10);
+        var numberOfDays = parseInt(this.value, 10);
+        var amountField = document.getElementById('amount1');
+
+        if (!isNaN(ratePerDay) && !isNaN(numberOfDays)) {
+            amountField.value = ratePerDay * numberOfDays;
+        } else {
+            amountField.value = '';
+        }
+    });
+</script>
+
+<script>
+    // JavaScript code to calculate rate per day and amount based on designation
+    document.getElementById('designation').addEventListener('change', function () {
+        var ratePerDayField = document.getElementById('ratePerDay');
+        var designation = this.value;
+
+        switch (designation) {
+            case 'WMO/Facility Incharge':
+                ratePerDayField.value = 1500;
+                break;
+            case 'LHV':
+            case 'LHS':
+            case 'LHW':
+            case 'FWW':
+            case 'FWA/M':
+            case 'FWA/F':
+            case 'SMZ':
+            case 'Mid Wife':
+                ratePerDayField.value = 1000;
+                break;
+            case 'CEO DHA/DHO':
+                ratePerDayField.value = 2000;
+                break;
+            case 'DC IRMNCH/Focal Person':
+                ratePerDayField.value = 1500;
+                break;
+            case 'M&E/SO':
+            case 'DPWO':
+            case 'TPWO':
+                ratePerDayField.value = 1000;
+                break;
+            case 'Driver':
+                ratePerDayField.value = 500;
+                break;
+            default
+
+:
+                ratePerDayField.value = 0;
+        }
+    });
+
+    // JavaScript code to calculate amount based on rate per day and number of days
+    document.getElementById('numberOfDays').addEventListener('input', function () {
+        var ratePerDay = parseInt(document.getElementById('ratePerDay').value, 10);
+        var numberOfDays = parseInt(this.value, 10);
+        var amountField = document.getElementById('amount');
+
+        if (!isNaN(ratePerDay) && !isNaN(numberOfDays)) {
+            amountField.value = ratePerDay * numberOfDays;
+        } else {
+            amountField.value = '';
+        }
+    });
+</script>
+
+<section id="dtc_main_form" class="main-content hide_block">
+    <div class="content-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-6 col-lg-12 col-12">
+                    <div class="card">
+                        <div class="card-body" style="width: 100%; padding: 20px;">
+                            <h2>Meeting Details</h2>
+                            <form id="meetingDetailsForm">
+                                <div class="form-group">
+                                    <label for="meetingCity">City</label>
+                                    <select class="form-control" id="meetingCity" name="meetingCity" required>
+                                        <option value="Gujranwala">Gujranwala</option>
+                                        <option value="Rawalpindi">Rawalpindi</option>
+                                        <option value="Faisalabad">Faisalabad</option>
+                                        <option value="Multan">Multan</option>
+                                        <option value="Khanewal">Khanewal</option>
+                                        <option value="Karachi - West">Karachi - West</option>
+                                        <option value="Karachi - East">Karachi - East</option>
+                                        <option value="Karachi - South">Karachi - South</option>
+                                        <option value="Karachi - Center">Karachi - Center</option>
+                                        <option value="Korangi">Korangi</option>
+                                        <option value="Malir">Malir</option>
+                                        <option value="Kemari">Kemari</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="meetingDate">Date</label>
+                                    <input type="date" class="form-control" id="meetingDate" name="meetingDate" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="meetingType">Meeting Type</label>
+                                    <select class="form-control" id="meetingType" name="meetingType" required>
+                                        <option value="DTC">DTC</option>
+                                        <option value="DHMT">DHMT</option>
+                                        <option value="D4D">D4D</option>
+                                        <option value="MMC">MMC</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="attachment1">Meeting Letter</label>
+                                    <input type="file" class="form-control-file" id="attachment1" name="attachment1">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="attachment2">Attendance Sheet</label>
+                                    <input type="file" class="form-control-file" id="attachment2" name="attachment2">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="attachment3">Minutes</label>
+                                    <input type="file" class="form-control-file" id="attachment3" name="attachment3">
+                                </div>
+
+                                <button type="submit" class="btn btn-info">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <section id="fpchampionactivity_main_form" class="main-content hide_block">
+            <div class="content-wrapper">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-12 col-12">
+                            <div class="card">
+                                <div class="card-body" style="width: 100%; padding: 20px;">
+                                    <h2>Add FP Champion Activity</h2>
+                                    <form id="addFpChampionActivityForm">
+                                        <div class="form-group">
+                                            <label for="activityDate">Date</label>
+                                            <input type="date" class="form-control" id="activityDate" name="activityDate" required>
+                                        </div>
+        
+                                        <div class="form-group">
+                                            <label for="engagementsForFP">No of engagements for FP</label>
+                                            <input type="number" class="form-control" id="engagementsForFP" name="engagementsForFP" required>
+                                        </div>
+        
+                                        <div class="form-group">
+                                            <label for="fpChampionName">Name of FP Champion</label>
+                                            <select class="form-control" id="fpChampionName" name="fpChampionName" required>
+                                                <option value="FpChamp1">FP Champion 1</option>
+                                                <option value="FpChamp2">FP Champion 2</option>
+                                            </select>
+                                        </div>
+        
+                                        <div class="form-group">
+                                            <label for="designation">Designation</label>
+                                            <select class="form-control" id="designation" name="designation" required>
+                                                <option value="Designation 1">Designation 1</option>
+                                                <option value="Designation 2">Designation 2</option>
+                                            </select>
+                                        </div>
+        
+                                        <div class="form-group">
+                                            <label for="facilityName">Facility Name/LG</label>
+                                            <input type="text" class="form-control" id="facilityName" name="facilityName" required
+                                                placeholder="Enter facility name or LG">
+                                        </div>
+        
+                                        <div class="form-group">
+                                            <label for="areaOfInfluence">Area of Influence</label>
+                                            <input type="text" class="form-control" id="areaOfInfluence" name="areaOfInfluence" required
+                                                placeholder="Enter area of influence">
+                                        </div>
+        
+                                        <div class="form-group">
+                                            <label for="topicOfMeeting">Topic of Meeting</label>
+                                            <input type="text" class="form-control" id="topicOfMeeting" name="topicOfMeeting" required
+                                                placeholder="Enter topic of meeting">
+                                        </div>
+        
+                                        <div class="form-group">
+                                            <label for="participantsNumber">Number of Participants in Activity</label>
+                                            <input type="number" class="form-control" id="participantsNumber" name="participantsNumber" required>
+                                        </div>
+        
+                                        <div class="form-group">
+                                            <label for="attachment">Attachment (Picture)</label>
+                                            <input type="file" class="form-control-file" id="attachment" name="attachment">
+                                        </div>
+        
+                                        <button type="submit" class="btn btn-info">Submit</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="fpchampion_main_form" class="main-content hide_block">
+            <div class="content-wrapper">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-12 col-12">
+                            <div class="card">
+                                <div class="card-body" style="width: 100%; padding: 20px;">
+                                    <h2>Add FP Champion</h2>
+                                    <form id="addFpChampionForm">
+                                        <div class="form-group">
+                                            <label for="fpChampionName">Name of FP Champion</label>
+                                            <input type="text" class="form-control" id="fpChampionName" name="fpChampionName" required
+                                                pattern=".{4,}" title="Name must contain 4 or more characters"
+                                                placeholder="Enter 4 or more characters">
+                                        </div>
+        
+                                        <div class="form-group">
+                                            <label for="designation">Designation</label>
+                                            <select class="form-control" id="designation" name="designation" required>
+                                                <option value="Designation 1">Designation 1</option>
+                                                <option value="Designation 2">Designation 2</option>
+                                            </select>
+                                        </div>
+        
+                                        <div class="form-group">
+                                            <label for="organization">Organization</label>
+                                            <input type="text" class="form-control" id="organization" name="organization" required
+                                                placeholder="Enter your organization">
+                                        </div>
+        
+                                        <div class="form-group">
+                                            <label for="areaOfInfluence">Area of Influence</label>
+                                            <input type="text" class="form-control" id="areaOfInfluence" name="areaOfInfluence" required
+                                                placeholder="Enter area of influence">
+                                        </div>
+        
+                                        <div class="form-group">
+                                            <label for="facilityName">Facility Name/LG</label>
+                                            <input type="text" class="form-control" id="facilityName" name="facilityName" required
+                                                placeholder="Enter facility name or LG">
+                                        </div>
+        
+                                        <div class="form-group">
+                                            <label for="contactNumber">Contact Number</label>
+                                            <input type="tel" class="form-control" id="contactNumber" name="contactNumber" required
+                                                placeholder="Enter contact number">
+                                        </div>
+        
+                                        <button type="submit" class="btn btn-info">Submit</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
         <section id="user_main_form" class="main-content hide_block">
             <div class="content-wrapper">
                 <div class="container-fluid">
