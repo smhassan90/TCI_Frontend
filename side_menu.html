@@ -76,7 +76,7 @@
                         <a id="add_tadavoucher"  data-tablename="tadavoucher" data-primarykeycolumn="ID" class="menu-item"><i class="icon-wallet"></i><span data-i18n="" class="menu-title">TADA Voucher</span></a>
                     </li>
                     <li class="nav-item">
-                        <a id="add_dtc"  data-tablename="dtc" data-primarykeycolumn="ID" class="menu-item"><i class="icon-wallet"></i><span data-i18n="" class="menu-title">DTC/DHMT</span></a>
+                        <a id="add_dtc"  data-tablename="dtc" data-primarykeycolumn="ID" class="menu-item"><i class="icon-wallet"></i><span data-i18n="" class="menu-title">Meetings</span></a>
                     </li>
 
 
@@ -762,7 +762,7 @@
                                         <option value="DTC">DTC</option>
                                         <option value="DHMT">DHMT</option>
                                         <option value="D4D">D4D</option>
-                                        <option value="MMC">MMC</option>
+                                        
                                     </select>
                                 </div>
 
@@ -828,8 +828,11 @@
         
                                         <div class="form-group">
                                             <label for="facilityName">Facility Name/LG</label>
-                                            <input type="text" class="form-control" id="facilityName" name="facilityName" required
-                                                placeholder="Enter facility name or LG">
+                                            <select class="form-control" id="facilityName" name="facilityName" required>
+                                                <option value="" selected disabled>Select Facility Name/LG</option>
+                                                <option value="facility1">Facility 1</option>
+                                                <option value="facility2">Facility 2</option>
+                                            </select>
                                         </div>
         
                                         <div class="form-group">
@@ -839,7 +842,7 @@
                                         </div>
         
                                         <div class="form-group">
-                                            <label for="topicOfMeeting">Topic of Meeting</label>
+                                            <label for="topicOfMeeting">Add Topic of meeting/session/ activity/ engagement</label>
                                             <input type="text" class="form-control" id="topicOfMeeting" name="topicOfMeeting" required
                                                 placeholder="Enter topic of meeting">
                                         </div>
@@ -899,11 +902,14 @@
                                             <input type="text" class="form-control" id="areaOfInfluence" name="areaOfInfluence" required
                                                 placeholder="Enter area of influence">
                                         </div>
-        
+
                                         <div class="form-group">
                                             <label for="facilityName">Facility Name/LG</label>
-                                            <input type="text" class="form-control" id="facilityName" name="facilityName" required
-                                                placeholder="Enter facility name or LG">
+                                            <select class="form-control" id="facilityName" name="facilityName" required>
+                                                <option value="" selected disabled>Select Facility Name/LG</option>
+                                                <option value="facility1">Facility 1</option>
+                                                <option value="facility2">Facility 2</option>
+                                            </select>
                                         </div>
         
                                         <div class="form-group">
@@ -989,6 +995,7 @@
                                                 <option value="Admin/Super Admin">Super Admin</option>
                                                 <option value="Provincial Leads">Provincial Lead</option>
                                                 <option value="National Team">National Team</option>
+                                                <option value="National Team">Finance</option>
                                             </select>
                                         </div>
                                         <div class="form-group" id="provincialLeadsOptions" style="display: none;">
@@ -1153,12 +1160,12 @@
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label for="administrationDate">Date of administration</label>
-                                        <input type="date" class="form-control" id="administrationDate" name="administrationDate" required>
+                                        <label for="commencementDate">Date of commencement</label>
+                                        <input type="date" class="form-control" id="commencementDate" name="commencementDate" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="observerName">Name of the observer</label>
-                                        <select class="form-control" id="observ<!//erName" name="observerName" required>
+                                        <select class="form-control" id="observerName" name="observerName" required>
                                             <option value="Staff1">Staff 1</option>
                                             <option value="Staff2">Staff 2</option>
                                         </select>
@@ -1173,72 +1180,84 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="observedHII">HII/HIP observed</label>
-                                        <input type="text" class="form-control" id="observedHII" name="observedHII" required>
+                                        <select class="form-control" id="observedHII" name="observedHII" required>
+                                            <option value="" selected disabled>Select HII/HIP observed</option>
+                                            <option value="Community_Health_Workers">Community Health Workers (Lady Health Workers)</option>
+                                            <option value="Postpartum_Family_Planning">Postpartum Family Planning</option>
+                                            <option value="Family_Health_Days">Family Health Days</option>
+                                            <option value="Integrated_FP_Outreach">Integrated FP Outreach</option>
+                                            <option value="Whole_Site_Orientation">Whole Site Orientation</option>
+                                            <option value="Facility_Makeovers">Facility Makeovers</option>
+                                            <option value="Data_Quality">Data Quality</option>
+                                        </select>
+                                    </br>
+                                        <label for="observedHII">Scale: Yes = 1, No = 0</label>    
                                     </div>
+                                    
     
                                     <!-- Questionnaire -->
                                     <h2>Demand Aggregation</h2>
                                     <h3>1.	Community Health Workers / Lady Health Workers</h3>
                                   <!-- Question 1 -->
                                 <div class="form-group">
-                                    <label for="q1">1. Availability of trained LHWs/CHWs on Family planning (at least one trained CHWs).</label>
+                                    <label for="q1">1. Availability of trained LHWs/CHWs on Family planning (at least one trained CHWs).(Check LHWs training record at district level/ program level (RMNCH,TIMS))</label>
                                     <select class="form-control" id="q1" name="q1" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="q1Remarks" name="q1Remarks" placeholder="Remarks">
                                 </div>
-
+    
                                 <!-- Question 2 -->
                                 <div class="form-group">
-                                    <label for="q2">2. LHWs/ CHWs received training/refreshers on FP counseling in the last 3 Years?</label>
+                                    <label for="q2">2. LHWs/ CHWs received training/refreshers on FP counseling in the last 3 Years? (Check FP counselling training records at HF/district level)</label>
                                     <select class="form-control" id="q2" name="q2" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="q2Remarks" name="q2Remarks" placeholder="Remarks">
                                 </div>
-
+    
                                 <!-- Question 3 -->
                                 <div class="form-group">
-                                    <label for="q3">3. LHWs/ CHWs have method mix commodities.</label>
+                                    <label for="q3">3. LHWs/ CHWs have method mix commodities. Check availability of at least Pills, Condoms, in LHWs stocks(observation based)</label>
                                     <select class="form-control" id="q3" name="q3" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="q3Remarks" name="q3Remarks" placeholder="Remarks">
                                 </div>
-
+    
                                 <!-- Question 4 -->
                                 <div class="form-group">
-                                    <label for="q4">4. LHWs/ CHWs have FP related IEC material for demand generation.</label>
+                                    <label for="q4">4. LHWs/ CHWs have FP related IEC material for demand generation. (Check availability of pamphlets/ brochures,/flyers/counselling cards/MEC Wheel/counseling book etc.)</label>
                                     <select class="form-control" id="q4" name="q4" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="q4Remarks" name="q4Remarks" placeholder="Remarks">
                                 </div>
-
+    
                                 <!-- Question 5 -->
                                 <div class="form-group">
-                                    <label for="q5">5. CHWs have guidelines on FP related responsibilities?</label>
+                                    <label for="q5">5. CHWs have guidelines on FP related responsibilities? (Check any guidelines/manual/JDs on FP related responsibilities are available with CHWs or HFs)</label>
                                     <select class="form-control" id="q5" name="q5" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="q5Remarks" name="q5Remarks" placeholder="Remarks">
                                 </div>
-
+    
                                 <!-- Question 6 -->
                                 <div class="form-group">
-                                    <label for="q6">6. CHW’s supervisors conduct supportive supervision visits once in three months?</label>
+                                    <label for="q6">6. CHW’s supervisors conduct supportive supervision visits once in three months? (MoV: Discussion / confirmation by CHW)</label>
                                     <select class="form-control" id="q6" name="q6" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="q6Remarks" name="q6Remarks" placeholder="Remarks">
                                 </div>
-
+    
                                 <!-- Results -->
                                 <h3>Results</h3>
                                 <div class="form-group">
@@ -1249,81 +1268,89 @@
                                     <label for="percentage">Total Scores (%)</label>
                                     <input type="text" class="form-control" id="percentage" name="percentage" readonly>
                                 </div>
-
     
-
-
+    
+    
+    
                                 <hr style="border: 1px solid #3498db;">
-
+    
                                 <!-- Questionnaire 2 -->
                                 <h2>2.	Postpartum family planning  (PPFP)</h2>
                                 
                                 <!-- Question 1 -->
                                 <div class="form-group">
-                                    <label for="2q1">1. Facility is a good candidate for PPFP services (has PPFP trained service providers, equipped with method mix FP services, government guidelines available).</label>
+                                    <label for="2q1">1. Facility is a good candidate for PPFP services (has PPFP trained service providers, equipped with method mix FP services, government guidelines available). (MoV: Confirm training record at District/Facility level, HF stock register, availability of government guidelines)
+                                        At least 1 skilled provider at each facility
+                                        Training/refresher in last 3 years
+                                        Handbook of govt. guidelines at each HF
+                                        </label>
                                     <select class="form-control" id="2q1" name="2q1" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="2q1Remarks" name="2q1Remarks" placeholder="Remarks">
                                 </div>
                                 
                                 <!-- Question 2 -->
                                 <div class="form-group">
-                                    <label for="2q2">2. Providers are trained on PPFP services & counseling based on government guidelines?</label>
+                                    <label for="2q2">2. Providers are trained on PPFP services & counseling based on government guidelines? Training certificate endorsed by govt (one govt. official signed the certificate)
+                                        Data of trained participants in last 3 years from any govt system
+                                        </label>
                                     <select class="form-control" id="2q2" name="2q2" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="2q2Remarks" name="2q2Remarks" placeholder="Remarks">
                                 </div>
                                 
                                 <!-- Question 3 -->
                                 <div class="form-group">
-                                    <label for="2q3">3. CHWs are oriented on PPFP.</label>
+                                    <label for="2q3">3. CHWs are oriented on PPFP. Discussion with LHS or LHV during monthly meeting</label>
                                     <select class="form-control" id="2q3" name="2q3" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="2q3Remarks" name="2q3Remarks" placeholder="Remarks">
                                 </div>
                                 
                                 <!-- Question 4 -->
                                 <div class="form-group">
-                                    <label for="2q4">4. The data of PPFP uptake is recorded.</label>
+                                    <label for="2q4">4. The data of PPFP uptake is recorded. Check data register/DHIS</label>
                                     <select class="form-control" id="2q4" name="2q4" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="2q4Remarks" name="2q4Remarks" placeholder="Remarks">
                                 </div>
                                 
                                 <!-- Question 5 -->
                                 <div class="form-group">
-                                    <label for="2q5">5. FP counseling is provided in the facility during antenatal care for pregnant women.</label>
+                                    <label for="2q5">5. FP counseling is provided in the facility during antenatal care for pregnant women. Discussion/confirmation by the facility-in-charge.</label>
                                     <select class="form-control" id="2q5" name="2q5" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="2q5Remarks" name="2q5Remarks" placeholder="Remarks">
                                 </div>
                                 
                                 <!-- Question 6 -->
                                 <div class="form-group">
-                                    <label for="2q6">6. FP counseling and services are provided during postnatal care.</label>
+                                    <label for="2q6">6. FP counseling and services are provided during postnatal care. Check data register/DHIS</label>
                                     <select class="form-control" id="2q6" name="2q6" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="2q6Remarks" name="2q6Remarks" placeholder="Remarks">
                                 </div>
                                 
                                 <!-- Question 7 -->
                                 <div class="form-group">
-                                    <label for="2q7">7. Facility is organizing review meetings at least in a quarter.</label>
+                                    <label for="2q7">7. Facility is organizing review meetings at least in a quarter. Discussion with facility in-charge
+                                        (Review meeting in last quarter? Have the component of PPFP discussed?)
+                                        </label>
                                     <select class="form-control" id="2q7" name="2q7" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="2q7Remarks" name="2q7Remarks" placeholder="Remarks">
                                 </div>
@@ -1339,10 +1366,10 @@
                                     <input type="text" class="form-control" id="2percentage" name="2percentage" readonly>
                                 </div>
                                
-
-
-
-
+    
+    
+    
+    
                                 <hr style="border: 1px solid #3498db;">
                                 <!-- Questionnaire 3 -->
                                 <h2>Service Delivery & Supply</h2>
@@ -1350,70 +1377,70 @@
                                 
                                 <!-- Question 1 -->
                                 <div class="form-group">
-                                    <label for="3q1">1. Community mobilization conducted by CHWs/LHWs in the catchment area of the facility before FHD.</label>
+                                    <label for="3q1">1. Community mobilization conducted by CHWs/LHWs in the catchment area of the facility before FHD. MoV: Confirmation by the LHS</label>
                                     <select class="form-control" id="3q1" name="3q1" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="3q1Remarks" name="3q1Remarks" placeholder="Remarks">
                                 </div>
                                 
                                 <!-- Question 2 -->
                                 <div class="form-group">
-                                    <label for="3q2">2. Availability of clean/sanitized and adequate space for FHD is available as per the average number of footprints.</label>
+                                    <label for="3q2">2. Availability of clean/sanitized and adequate space for FHD is available as per the average number of footprints. MOV: Observed cleanliness, check register for average number of client/day, observe FHD. </label>
                                     <select class="form-control" id="3q2" name="3q2" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="3q2Remarks" name="3q2Remarks" placeholder="Remarks">
                                 </div>
                                 
                                 <!-- Question 3 -->
                                 <div class="form-group">
-                                    <label for="3q3">3. FHD data recorded at the facility.</label>
+                                    <label for="3q3">3. FHD data recorded at the facility. (Observe FP service register / OPD register)</label>
                                     <select class="form-control" id="3q3" name="3q3" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="3q3Remarks" name="3q3Remarks" placeholder="Remarks">
                                 </div>
                                 
                                 <!-- Question 4 -->
                                 <div class="form-group">
-                                    <label for="3q4">4. Method mix FP services available during FHDs?</label>
+                                    <label for="3q4">4. Method mix FP services available during FHDs? (Observe stock register/daily consumption register check stock on the day of FHD)</label>
                                     <select class="form-control" id="3q4" name="3q4" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="3q4Remarks" name="3q4Remarks" placeholder="Remarks">
                                 </div>
                                 
                                 <!-- Question 5 -->
                                 <div class="form-group">
-                                    <label for="3q5">5. FP services/counseling given to the clients during FHD are as per the guidelines.</label>
+                                    <label for="3q5">5. FP services/counseling given to the clients during FHD are as per the guidelines. (Check facility counselling records/ guidelines)</label>
                                     <select class="form-control" id="3q5" name="3q5" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="3q5Remarks" name="3q5Remarks" placeholder="Remarks">
                                 </div>
                                 
                                 <!-- Question 6 -->
                                 <div class="form-group">
-                                    <label for="3q6">6. Female medical officer/Lady Health Visitor present during the FHD.</label>
+                                    <label for="3q6">6. Female medical officer/Lady Health Visitor present during the FHD.  MOV: Attendance Sheet / Activity report</label>
                                     <select class="form-control" id="3q6" name="3q6" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="3q6Remarks" name="3q6Remarks" placeholder="Remarks">
                                 </div>
                                 
                                 <!-- Question 7 -->
                                 <div class="form-group">
-                                    <label for="3q7">7. Staff equipped with adequate and printed tools i.e., information packages on FP and IEC materials.</label>
+                                    <label for="3q7">7. Staff equipped with adequate and printed tools i.e., information packages on FP and IEC materials. (Observe IEC (Pasted/placed for distribution) at facility)</label>
                                     <select class="form-control" id="3q7" name="3q7" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="3q7Remarks" name="3q7Remarks" placeholder="Remarks">
                                 </div>
@@ -1429,8 +1456,8 @@
                                     <input type="text" class="form-control" id="3percentage" name="3percentage" readonly>
                                 </div>
                                
-
-
+    
+    
                                 <hr style="border: 1px solid #3498db;">
                                 <!-- Questionnaire 4 -->
                                 <h2>Service Delivery & Supply</h2>
@@ -1438,60 +1465,60 @@
                                 
                                 <!-- Question 1 -->
                                 <div class="form-group">
-                                    <label for="4q1">1. The LG identifies outreach site with the consultation of facility and outreach staff (LHWs/CHWs/Family Welfare Assistants).</label>
+                                    <label for="4q1">1. The LG identifies outreach site with the consultation of facility and outreach staff (LHWs/CHWs/Family Welfare Assistants). (Probe staff involved in the integrated outreach camp if they were consulted before the identification of the camp site selection).</label>
                                     <select class="form-control" id="4q1" name="4q1" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="4q1Remarks" name="4q1Remarks" placeholder="Remarks">
                                 </div>
                                 
                                 <!-- Question 2 -->
                                 <div class="form-group">
-                                    <label for="4q2">2. The area selected for MSU/Satellite has relatively high population density and fulfills community FP needs.</label>
+                                    <label for="4q2">2. The area selected for MSU/Satellite has relatively high population density and fulfills community FP needs. (Consult MSU staff and clients about the population density and select YES if the population is between 200-500 households)</label>
                                     <select class="form-control" id="4q2" name="4q2" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="4q2Remarks" name="4q2Remarks" placeholder="Remarks">
                                 </div>
                                 
                                 <!-- Question 3 -->
                                 <div class="form-group">
-                                    <label for="4q3">3. Community mobilization was conducted by CHWs before the outreach event.</label>
+                                    <label for="4q3">3. Community mobilization was conducted by CHWs before the outreach event. (Discussions with out-reach team or community OR the in-charge). </label>
                                     <select class="form-control" id="4q3" name="4q3" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="4q3Remarks" name="4q3Remarks" placeholder="Remarks">
                                 </div>
                                 
                                 <!-- Question 4 -->
                                 <div class="form-group">
-                                    <label for="4q4">4. Service integration occurred during outreach.</label>
+                                    <label for="4q4">4. Service integration occurred during outreach. (Check the client record book and see the services given on FP, or other services like immunization, child health, HIV, minor ailments, or any other health services given at the camp if any service other than FP is given then select YES)</label>
                                     <select class="form-control" id="4q4" name="4q4" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="4q4Remarks" name="4q4Remarks" placeholder="Remarks">
                                 </div>
                                 
                                 <!-- Question 5 -->
                                 <div class="form-group">
-                                    <label for="4q5">5. Outreach uptake data is recorded in the register/online.</label>
+                                    <label for="4q5">5. Outreach uptake data is recorded in the register/online. (Observe FP service register / Online)</label>
                                     <select class="form-control" id="4q5" name="4q5" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="4q5Remarks" name="4q5Remarks" placeholder="Remarks">
                                 </div>
                                 
                                 <!-- Question 6 -->
                                 <div class="form-group">
-                                    <label for="4q6">6. Clients were satisfied with the services given at the camp/MSU.</label>
+                                    <label for="4q6">6. Clients were satisfied with the services given at the camp/MSU. (Ask 5 clients randomly and if 4 of them were satisfied then select YES)</label>
                                     <select class="form-control" id="4q6" name="4q6" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="4q6Remarks" name="4q6Remarks" placeholder="Remarks">
                                 </div>
@@ -1508,7 +1535,7 @@
                                 </div>
                                 
                                
-
+    
                                 <hr style="border: 1px solid #3498db;">
                                
                                 <!-- Questionnaire 5 -->
@@ -1517,40 +1544,40 @@
                                 
                                 <!-- Question 1 -->
                                 <div class="form-group">
-                                    <label for="5q1">1. Whole Site Orientation has participation of both technical and non-technical facility staff. The session might be gender-segregated according to specific set Gender Norms at some places.</label>
+                                    <label for="5q1">1. Whole Site Orientation has participation of both technical and 0n-technical facility staff. The session might be gender-segregated according to specific set Gender 0rms at some places. (MoV: Attendance sheet gender segregated making sure everyone regardless of gender attend the session) </label>
                                     <select class="form-control" id="5q1" name="5q1" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="5q1Remarks" name="5q1Remarks" placeholder="Remarks">
                                 </div>
                                 
                                 <!-- Question 2 -->
                                 <div class="form-group">
-                                    <label for="5q2">2. Whole Site Orientation follows the standard facilitation manual.</label>
+                                    <label for="5q2">2. Whole Site Orientation follows the standard facilitation manual. Review the whole site orientation facilitator report on covered topics vs facilitation manual (developed and reviewed/endorsed by the Government)</label>
                                     <select class="form-control" id="5q2" name="5q2" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="5q2Remarks" name="5q2Remarks" placeholder="Remarks">
                                 </div>
                                 
                                 <!-- Question 3 -->
                                 <div class="form-group">
-                                    <label for="5q3">3. WSO is organized with a prescheduled planner along with topics to be covered.</label>
+                                    <label for="5q3">3. WSO is organized with a prescheduled planner along with topics to be covered. (Review the WSO facility schedule and participants register/Notification for the WSO / attendance sheet)</label>
                                     <select class="form-control" id="5q3" name="5q3" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="5q3Remarks" name="5q3Remarks" placeholder="Remarks">
                                 </div>
                                 
                                 <!-- Question 4 -->
                                 <div class="form-group">
-                                    <label for="5q4">4. 80% of the health facility participants completed the whole site orientation (at least 1 session) during the last 6 months.</label>
+                                    <label for="5q4">4. 80% of the health facility participants completed the whole site orientation (at least 1 session) during the last 6 months. (Review Attendance sheet vs list of Invitees/facility staff list)</label>
                                     <select class="form-control" id="5q4" name="5q4" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="5q4Remarks" name="5q4Remarks" placeholder="Remarks">
                                 </div>
@@ -1574,80 +1601,86 @@
                                 
                                 <!-- Question 1 -->
                                 <div class="form-group">
-                                    <label for="6q1">1. Program implementation team (DTC/HMT) organized with good representation from relevant stakeholders.</label>
+                                    <label for="6q1">1. Program implementation team (DTC/HMT) organized with good representation from relevant stakeholders. (Verify from steering/coordination meeting reports or other relevant documents)
+    
+                                        NOTE: Program implementation team is called differently in each country and hubs should localize the final tool to change this terminology (and other terminologies in this tool) as needed. Please also add which agencies/departments are expected to be included to have “good representation”.
+                                        </label>
                                     <select class="form-control" id="6q1" name="6q1" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="6q1Remarks" name="6q1Remarks" placeholder="Remarks">
                                 </div>
                                 
                                 <!-- Question 2 -->
                                 <div class="form-group">
-                                    <label for="6q2">2. Program implementation team meets quarterly (or as scheduled), with meeting minutes or notes written up.</label>
+                                    <label for="6q2">2. Program implementation team meets quarterly (or as scheduled), with meeting minutes or 0tes written up. (Verify from steering/coordination meeting reports or other relevant documents)</label>
                                     <select class="form-control" id="6q2" name="6q2" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="6q2Remarks" name="6q2Remarks" placeholder="Remarks">
                                 </div>
                                 
                                 <!-- Question 3 -->
                                 <div class="form-group">
-                                    <label for="6q3">3. If relevant/expected in the local context, some members of Program implementation team have received coaching/training or orientation to be master coaches/coaches and provide directives to their local teams.</label>
+                                    <label for="6q3">3. If relevant/expected in the local context, some members of Program implementation team have received coaching/training or orientation to be master coaches/coaches and provide directives to their local teams. (Verify from list of coaches/trainings attended)</label>
                                     <select class="form-control" id="6q3" name="6q3" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="6q3Remarks" name="6q3Remarks" placeholder="Remarks">
                                 </div>
                                 
                                 <!-- Question 4 -->
                                 <div class="form-group">
-                                    <label for="6q4">4. Gaps and challenges in the FP/AYSRH program were identified in PIT/DTC meeting.</label>
+                                    <label for="6q4">4. Gaps and challenges in the FP/AYSRH program were identified in PIT/DTC meeting. (Verify from workplan development process reports, steering/coordination meeting reports, or other relevant documents)</label>
                                     <select class="form-control" id="6q4" name="6q4" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="6q4Remarks" name="6q4Remarks" placeholder="Remarks">
                                 </div>
                                 
                                 <!-- Question 5 -->
                                 <div class="form-group">
-                                    <label for="6q5">5. Action steps to address gaps and challenges were discussed in PIT/DTC meeting.</label>
+                                    <label for="6q5">5. Action steps to address gaps and challenges were discussed in PIT/DTC meeting. (Verify from steering/coordination meeting reports or other relevant documents)</label>
                                     <select class="form-control" id="6q5" name="6q5" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="6q5Remarks" name="6q5Remarks" placeholder="Remarks">
                                 </div>
                                 
                                 <!-- Question 6 -->
                                 <div class="form-group">
-                                    <label for="6q6">6. Action steps identified from previous meeting/s were incorporated in plans and/or carried out.</label>
+                                    <label for="6q6">6. Action steps identified from previous meeting/s were incorporated in plans and/or carried out. (Verify from quarterly/annual workplans or other relevant documents)</label>
                                     <select class="form-control" id="6q6" name="6q6" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="6q6Remarks" name="6q6Remarks" placeholder="Remarks">
                                 </div>
                                 
                                 <!-- Question 7 -->
                                 <div class="form-group">
-                                    <label for="6q7">7. Coordination with partners was carried out, including the private sector as appropriate.</label>
+                                    <label for="6q7">7. Coordination with partners was carried out, including the private sector as appropriate. (Verify from steering/coordination meeting reports or other relevant documents)
+    
+                                        NOTE: Hubs to specify which partners are relevant in their country context.
+                                        </label>
                                     <select class="form-control" id="6q7" name="6q7" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="6q7Remarks" name="6q7Remarks" placeholder="Remarks">
                                 </div>
                                 
                                 <!-- Question 8 -->
                                 <div class="form-group">
-                                    <label for="6q8">8. Program implementation team operating with minimal support from TCI city manager/team. ("Yes" would mean PIT is now capable of functioning effectively on its own).</label>
+                                    <label for="6q8">8. Program implementation team operating with minimal support from TCI city manager/team. ("Yes" would mean PIT is 0w capable of functioning effectively on its own).</label>
                                     <select class="form-control" id="6q8" name="6q8" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="6q8Remarks" name="6q8Remarks" placeholder="Remarks">
                                 </div>
@@ -1664,7 +1697,7 @@
                                 </div>
                                 
                                
-
+    
                                 <hr style="border: 1px solid #3498db;">
                                 
                                 <!-- Questionnaire 7 -->
@@ -1673,100 +1706,100 @@
                                 
                                 <!-- Question 1 -->
                                 <div class="form-group">
-                                    <label for="7q1">1. Staff capturing and recording FP data in the FP registers have been trained to collect and enter the data correctly.</label>
+                                    <label for="7q1">1. Staff capturing and recording FP data in the FP registers have been trained to collect and enter the data correctly. (Probe H/F or unit in charge if staff responsible for FP have been capacity build on how to complete the FP registers)</label>
                                     <select class="form-control" id="7q1" name="7q1" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="7q1Remarks" name="7q1Remarks" placeholder="Remarks">
                                 </div>
                                 
                                 <!-- Question 2 -->
                                 <div class="form-group">
-                                    <label for="7q2">2. Staff at the health facility have had their capacity built to summarize and report FP indicators.</label>
+                                    <label for="7q2">2. Staff at the health facility have had their capacity built to summarize and report FP indicators. (Probe H/F or unit in charge if staff responsible for FP have had their capacity built  on FP indicators and how to summarize data from the FP registers into required indicators and how to complete the FP summary forms)</label>
                                     <select class="form-control" id="7q2" name="7q2" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="7q2Remarks" name="7q2Remarks" placeholder="Remarks">
                                 </div>
                                 
                                 <!-- Question 3 -->
                                 <div class="form-group">
-                                    <label for="7q3">3. Correct MoH FP data collection tools (registers) are available at the health facility.</label>
+                                    <label for="7q3">3. Correct MoH FP data collection tools (registers) are available at the health facility. (Verify that the tools are available)</label>
                                     <select class="form-control" id="7q3" name="7q3" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="7q3Remarks" name="7q3Remarks" placeholder="Remarks">
                                 </div>
                                 
                                 <!-- Question 4 -->
                                 <div class="form-group">
-                                    <label for="7q4">4. Correct MoH FP data collection tools (registers) are in use in the health facility.</label>
+                                    <label for="7q4">4. Correct MoH FP data collection tools (registers) are in use in the health facility. (Hubs to provide guidance on correct tools. Assessor should verify that only the correct tools are in use)</label>
                                     <select class="form-control" id="7q4" name="7q4" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="7q4Remarks" name="7q4Remarks" placeholder="Remarks">
                                 </div>
                                 
                                 <!-- Question 5 -->
                                 <div class="form-group">
-                                    <label for="7q5">5. Correct FP monthly data summary tools are available in the health facility.</label>
-                                    <select class="form-control" id="7q5" name="7q5" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                    <label for="7q5">5. Correct FP monthly data summary tools are available in the health facility. (Verify that all the correct tools are available)</label>
+                                    <select class="form-control" id="7q5" name="7q5" required> 
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="7q5Remarks" name="7q5Remarks" placeholder="Remarks">
                                 </div>
                                 
                                 <!-- Question 6 -->
                                 <div class="form-group">
-                                    <label for="7q6">6. Correct FP monthly data summary tools are in use in the health facility.</label>
+                                    <label for="7q6">6. Correct FP monthly data summary tools are in use in the health facility. (Hubs to provide guidance on correct tools. Assessor should verify that only the correct tools are in use)</label>
                                     <select class="form-control" id="7q6" name="7q6" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="7q6Remarks" name="7q6Remarks" placeholder="Remarks">
                                 </div>
                                 
                                 <!-- Question 7 -->
                                 <div class="form-group">
-                                    <label for="7q7">7. The health facility has submitted FP summary reports for the past 3 months (as expected e.g. to DHIS-2, or to district or to).</label>
+                                    <label for="7q7">7. The health facility has submitted FP summary reports for the past 3 months (as expected e.g. to DHIS-2, or to district or to). (Review and check summary tools and confirm data submitted to HMIS)</label>
                                     <select class="form-control" id="7q7" name="7q7" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="7q7Remarks" name="7q7Remarks" placeholder="Remarks">
                                 </div>
                                 
                                 <!-- Question 8 -->
                                 <div class="form-group">
-                                    <label for="7q8">8. The health facility FP summary reports for the past 3 months are captured on the DHIS.</label>
+                                    <label for="7q8">8. The health facility FP summary reports for the past 3 months are captured on the DHIS. (Review and check the DHIS to confirm data submitted on the DHIS 2)</label>
                                     <select class="form-control" id="7q8" name="7q8" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="7q8Remarks" name="7q8Remarks" placeholder="Remarks">
                                 </div>
                                 
                                 <!-- Question 9 -->
                                 <div class="form-group">
-                                    <label for="7q9">9. FP summary reports for the past 3 months were all submitted in time (either to the district/DHIS).</label>
+                                    <label for="7q9">9. FP summary reports for the past 3 months were all submitted in time (either to the district/DHIS). (Prob standard FP submission timeliness to District/ HMIS against date stamps for health facility FP reports submitted to HMIS in the past 3 months)</label>
                                     <select class="form-control" id="7q9" name="7q9" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="7q9Remarks" name="7q9Remarks" placeholder="Remarks">
                                 </div>
                                 
                                 <!-- Question 10 -->
                                 <div class="form-group">
-                                    <label for="7q10">10. Is there a data quality assessment/validation system for FP HMIS data at this facility in the last 2-3 months?</label>
+                                    <label for="7q10">10. Is there a data quality assessment/validation system for FP HMIS data at this facility in the last 2-3 months? 9.	(i.e DQA, Data validation exercise, Family Planning Supportive Supervision)</label>
                                     <select class="form-control" id="7q10" name="7q10" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="7q10Remarks" name="7q10Remarks" placeholder="Remarks">
                                 </div>
@@ -1775,8 +1808,8 @@
                                 <div class="form-group">
                                     <label for="7q11">11. Is there a tool to validate/assess FP HMIS data quality at this facility (i.e., DQA checklist, Data Validation Checklist)?</label>
                                     <select class="form-control" id="7q11" name="7q11" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="7q11Remarks" name="7q11Remarks" placeholder="Remarks">
                                 </div>
@@ -1791,64 +1824,67 @@
                                     <label for="7percentage">Total Scores (%)</label>
                                     <input type="text" class="form-control" id="7percentage" name="7percentage" readonly>
                                 </div>
-
+    
                                 <hr style="border: 1px solid #3498db;">
-
-
+    
+    
                                 <!-- Questionnaire 8 -->
                                 <h2>8.	Facility Makeover</h2>
                                 
-
+    
                                 <!-- Question 1 -->
                                 <div class="form-group">
-                                    <label for="8q1">1. All the mapped facilities are oriented on TCI model of facility makeover.</label>
+                                    <label for="8q1">1. All the mapped facilities are oriented on TCI model of facility makeover. Check orientation document / material </label>
                                     <select class="form-control" id="8q1" name="8q1" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="8q1Remarks" name="8q1Remarks" placeholder="Remarks">
                                 </div>
-
+    
                                 <!-- Question 2 -->
                                 <div class="form-group">
-                                    <label for="8q2">2. Facilities with high client volume selected with the consultation of the relevant district authorities.</label>
+                                    <label for="8q2">2. Facilities with high client volume selected with the consultation of the relevant district authorities. Selected minimum threshold of Clients (at least 20 FP Clients per month avg of clients for last three months)
+    
+                                        Check cliental through DHIS/CLMIS/HMIS or record keeping register / LG letter/notification.
+                                        </label>
                                     <select class="form-control" id="8q2" name="8q2" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="8q2Remarks" name="8q2Remarks" placeholder="Remarks">
                                 </div>
-
+    
                                 <!-- Question 3 -->
                                 <div class="form-group">
-                                    <label for="8q3">3. The facility reports family planning data on DHIS/CLMIS.</label>
+                                    <label for="8q3">3. The facility reports family planning data on DHIS/CLMIS. Check DHIS/CLMIS </label>
                                     <select class="form-control" id="8q3" name="8q3" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="8q3Remarks" name="8q3Remarks" placeholder="Remarks">
                                 </div>
-
+    
                                 <!-- Question 4 -->
                                 <div class="form-group">
-                                    <label for="8q4">4. The facility selected was based on poor infrastructure, hindering quality service delivery especially FP services.</label>
+                                    <label for="8q4">4. The facility selected was based on poor infrastructure, hindering quality service delivery especially FP services. Pre assessment checklist endorsed by Government, especially related to FP Services.</label>
                                     <select class="form-control" id="8q4" name="8q4" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="8q4Remarks" name="8q4Remarks" placeholder="Remarks">
                                 </div>
-
+    
                                 <!-- Question 5 -->
                                 <div class="form-group">
-                                    <label for="8q5">5. Relevant govt. officials and community leaders were invited to the official opening of the facility makeover to show their support for FP.</label>
+                                    <label for="8q5">5. Relevant govt. officials and community leaders were invited to the official opening of the facility makeover to show their support for FP. MOV: Pictures, invitation letter, event report)</label>
                                     <select class="form-control" id="8q5" name="8q5" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
+                                        <option value="1">1</option>
+                                        <option value="0">0</option>
                                     </select>
                                     <input type="text" class="form-control" id="8q5Remarks" name="8q5Remarks" placeholder="Remarks">
                                 </div>
-
+    
                                 <!-- Results -->
                                 <h3>Results</h3>
                                 <div class="form-group">
@@ -1859,10 +1895,10 @@
                                     <label for="8percentage">Total Scores (%)</label>
                                     <input type="text" class="form-control" id="8percentage" name="8percentage" readonly>
                                 </div>
-
-
-
-
+    
+    
+    
+    
                                     <button type="submit" class="btn btn-info">Submit</button>
                                 </form>
                             </div>
@@ -1939,8 +1975,6 @@
                                             <option value="FamilyWelfareCenter">Family Welfare Center</option>
                                             <option value="RuralHealthCenter">Rural Health Center</option>
                                             <option value="UrbanHealthCenter">Urban Health Center</option>
-                                            <option value="SGD">SGD</option>
-                                            <option value="UHU">UHU</option>
                                             <option value="MotherCareHospital">Mother Care Hospital</option>
                                             <option value="TerrirayHealthCare">Terriray Health Care</option>
                                         </select>
@@ -1977,7 +2011,10 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="facilityInchargeDesignation">Facility Incharge Designation</label>
-                                        <input type="text" class="form-control" id="facilityInchargeDesignation" name="facilityInchargeDesignation" required placeholder="Enter facility incharge designation">
+                                        <select class="form-control" id="facilityInchargeDesignation" name="facilityInchargeDesignation" required>
+                                            <option value="MedicalOfficer">Medical Officer</option>
+                                            <option value="WomenMedicalOfficer">Women Medical Officer</option>
+                                        </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="facilityInchargeEmail">Facility Incharge Email</label>
@@ -2046,7 +2083,8 @@
                                         <option value="Lady Health Supervisor">Lady Health Supervisor</option>
                                         <option value="Lady Health Worker">Lady Health Worker</option>
                                         <option value="Family Welfare Officer">Family Welfare Officer</option>
-                                        <option value="Family Welfare Worker">Family Welfare Worker</option>
+                                        <option value="Family Welfare Worker male">Family Welfare Worker /Male</option>
+                                        <option value="Family Welfare Worker female">Family Welfare Worker /Female</option>
                                         <option value="District Health Officer">District Health Officer</option>
                                         <option value="Deputy District Health Officer">Deputy District Health Officer</option>
                                         <option value="District Population Welfare Officer">District Population Welfare Officer</option>
@@ -2058,9 +2096,65 @@
                                         <option value="Aaya">Aaya</option>
                                         <option value="Security Guard">Security Guard</option>
                                         <option value="Data Officer">Data Officer</option>
+                                        <option value="social mobilizer">Social Mobilizer</option>
+                                        <option value="Tehsil Population Welfare Officer">Tehsil Population Welfare Officer</option>
+                                        <option value="M&E SO">M&E / SO</option>
+                                        <option value="CEO DHA">CEO DHA</option>
                                         <option value="Others">Others</option>
                                     </select>
                                     </div>
+                                    
+                                <div class="form-group">
+                                    <label for="facility">Facility</label>
+                                    <select class="form-control" id="facility" name="facility" required>
+                                        <option value="facility1">Facility 1</option>
+                                        <option value="facility2">Facility 2</option>
+                                    </select>
+                                </div>
+
+                                
+                                <div class="form-group">
+                                    <label for="district">District</label>
+                                    <select class="form-control" id="district" name="district" required>
+                                        <option value="Lahore">Lahore</option>
+                                        <option value="Gujranwala">Gujranwala</option>
+                                        <option value="Rawalpindi">Rawalpindi</option>
+                                        <option value="Faisalabad">Faisalabad</option>
+                                        <option value="Multan">Multan</option>
+                                        <option value="Khanewal">Khanewal</option>
+                                        <option value="Karachi - West">Karachi - West</option>
+                                        <option value="Karachi - East">Karachi - East</option>
+                                        <option value="Karachi - South">Karachi - South</option>
+                                        <option value="Karachi - Center">Karachi - Center</option>
+                                        <option value="Korangi">Korangi</option>
+                                        <option value="Malir">Malir</option>
+                                        <option value="Kemari">Kemari</option>
+                                    </select>
+                                </div>
+
+                           
+                                <div class="form-group">
+                                    <label for="bps">BPS</label>
+                                    <select class="form-control" id="bps" name="bps" required>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                        <option value="17">17</option>
+                                        <option value="18">18</option>
+                                        <option value="19">19</option>
+                                        <option value="20">20</option>
+                                        <option value="21">21</option>
+                                        <option value="22">22</option>
+                                    </select>
+                                </div>
+
                                     <div class="form-group">
                                         <label for="iban">IBAN</label>
                                         <input type="text" class="form-control" id="iban" name="iban" required placeholder="Enter iban number">
@@ -3938,22 +4032,9 @@
                                                                         <div class="col-lg-6 col-md-12">
                                                                             <div class="formFields">
                                                                                 <div class="form-group">
-                                                                                    <div class="form-group">
-                                                                                        <h5>City Manager Name<span class="required">*</span></h5>
-                                                                                        <div class="controls">
-                                                                                            <input type="text" id="inpCityManagerName" class="form-control" name="cityManagerName" required>
-                                                                                            <div class="help-block"></div>
-                                                                                        </div>
-                                                                                    </div>
                                                                                     
-                                                                                    <!-- Add Facility Incharge Name Field -->
-                                                                                    <div class="form-group">
-                                                                                        <h5>Facility Incharge Name<span class="required">*</span></h5>
-                                                                                        <div class="controls">
-                                                                                            <input type="text" id="inpFacilityInchargeName" class="form-control" name="facilityInchargeName" required>
-                                                                                            <div class="help-block"></div>
-                                                                                        </div>
-                                                                                    </div>
+                                                                                    
+                                                                                   
                                                                                     <h5>Name of City<span class="required">*</span></h5>
                                                                                     <div class="controls">
                                                                                         <select id="inpFieldActivityCity" name="city" class="form-control" required>
@@ -3982,17 +4063,7 @@
                                                                                         <div class="help-block"></div>
                                                                                     </div>
                                                                                 </div>
-                                                                                <!-- <div class="form-group">
-                                                                                    <h5>Location of Activity<span class="required">*</span></h5>
-                                                                                    <div class="controls">
-                                                                                        <select id="inpFieldActivityLocation" name="location" class="form-control" required>
-                                                                                            <option value="" selected="" disabled="">Select Location</option>
-                                                                                            <option value="Lahore">Lahore</option>
-                                                                                            <option value="Rawalpindi">Rawalpindi</option>
-                                                                                        </select>
-                                                                                        <div class="help-block"></div>
-                                                                                    </div>
-                                                                                </div> -->
+                                                                            
                                                                                 <div class="form-group">
                                                                                     <h5>Department Conducting Activity<span class="required">*</span></h5>
                                                                                     <div class="controls">
@@ -4014,48 +4085,21 @@
                                                                                             <option value="FHD">FHD</option>
                                                                                             <option value="Satellite Camp">Satellite Camp</option>
                                                                                             <option value="MSU">MSU</option>
-                                                                                            <option value="Training Attendance Sheet">Training Attendance Sheet</option>
-                                                                                            <option value="OJT">OJT</option>
-                                                                               
                                                                                         </select>
                                                                                         <div class="help-block"></div>
                                                                                     </div>
                                                                                 </div>
-                                                                                <div class="form-group">
-                                                                                    <h5>Accumulative Activity Number<span class="required">*</span></h5>
+                                                                                 <!-- Add Facility Incharge Name Field -->
+                                                                                 <div class="form-group">
+                                                                                    <h5>Facility Incharge Name<span class="required">*</span></h5>
                                                                                     <div class="controls">
-                                                                                        <input type="text" id="inpFieldActivityAccumulativeNumber" class="form-control" name="accumulativeNumber" required>
+                                                                                        <input type="text" id="inpFacilityInchargeName" class="form-control" name="facilityInchargeName" required>
                                                                                         <div class="help-block"></div>
                                                                                     </div>
                                                                                 </div>
+                            
                                                                                 <div class="form-group">
-                                                                                    <h5>Accumulative HII Implementation<span class="required">*</span></h5>
-                                                                                    <div class="controls">
-                                                                                        <input type="text" id="inpFieldActivityHIINumber" class="form-control" name="accumulativeHiiNumber" required>
-                                                                                        <div class="help-block"></div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="form-group">
-                                                                                    <h5>Services Provided<span class="required">*</span></h5>
-                                                                                    <div class="controls">
-                                                                                        <select id="inpFieldActivityServices" name="services" class="form-control" required>
-                                                                                            <option value="" selected="" disabled="">Select Services Provided</option>
-                                                                                            <option value="OPD Clients">OPD Client</option>
-                                                                                            <option value="FP">FP Client</option>
-                                                                                        </select>
-                                                                                        <div class="help-block"></div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="form-group">
-                                                                                    <h5>Attachment<span class="required">*</span></h5>
-                                                                                    <div class="controls">
-                                                                                        <input class="form-control form-control-sm" id="inpFieldActivityAttachment" type="file" required>
-                                                                                        <div class="help-block"></div>
-                                                                                    </div>
-                                                                                </div>
-
-                                                                                <div class="form-group">
-
+                            
                                                                                 <table class="table">
                                                                                     <thead>
                                                                                         <tr>
@@ -4151,17 +4195,28 @@
                                                                                             <td><input type="text" class="form-control" name="followUp12"></td>
                                                                                             <td><input type="text" class="form-control" name="total12" readonly></td>
                                                                                         </tr>
-                                                                                        <tr id="totalRow">
+                                                                                        <tr id="totalFP">
                                                                                             <td colspan="4" style="text-align: right;">FP Clients (Total)</td>
                                                                                             <td><input type="text" class="form-control" id="grandTotal" name="grandTotal" readonly></td>
+                                                                                        </tr>
+                                                                                        <tr id="totalOPD">
+                                                                                            <td colspan="4" style="text-align: right;">General OPD Client (Total) </td>
+                                                                                            <td><input type="text" class="form-control" id="total_opd" name="total_opd"></td>
                                                                                         </tr>
                                                                                     </tbody>
                                                                                 </table>
                                                                             </div>
-
+                                                                            <div class="form-group">
+                                                                                <h5>Attachment<span class="required">*</span></h5>
+                                                                                <div class="controls">
+                                                                                    <input class="form-control form-control-sm" id="inpFieldActivityAttachment" type="file" required>
+                                                                                    <div class="help-block"></div>
+                                                                                </div>
+                                                                            </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
+                            
                                                                     <div class="row">
                                                                         <div class="col-lg-6 col-md-12">
                                                                             <div class="block-button">
@@ -4220,7 +4275,7 @@
                                     <form id="formNewTab" class="dataentry_form form-horizontal was-validated">
                                         <div class="row">
                                             <div class="col-lg-6 col-md-12">
-                                                <div class="formFields">
+                                                <div class="formFields" >
                                                     <div class="form-group">
                                                         <h5>Name of City <span class="required">*</span></h5>
                                                         <div class="controls">
@@ -4235,7 +4290,7 @@
                                                         </div>
                                                     </div>
                                                   <div class="form-group">
-                                                    <h5>Location of Activity <span class="required">*</span></h5>
+                                                    <h5>Name of City <span class="required">*</span></h5>
                                                     <div class="controls">
                                                         <select id="inpActivityLocation" name="activityLocation" class="form-control" required>
                                                             <option value="" selected disabled>Select Location</option>
@@ -4256,7 +4311,59 @@
                                                         <div class="invalid-feedback">Please select a location.</div>
                                                     </div>
                                                 </div>
-
+                                                <div class="form-group">
+                                                    <h5>City Code <span class="required">*</span></h5>
+                                                    <div class="controls">
+                                                        <select id="inpCityCode" name="inpCitycode" class="form-control" required>
+                                                            <option value="" selected disabled>Select Code</option>
+                                                            <option value="Lahore">Lahore</option>
+                                                            <option value="Gujranwala">Gujranwala</option>
+                                                            <option value="Rawalpindi">Rawalpindi</option>
+                                                            <option value="Faisalabad">Faisalabad</option>
+                                                            <option value="Multan">Multan</option>
+                                                            <option value="Khanewal">Khanewal</option>
+                                                            <option value="Karachi West">Karachi West</option>
+                                                            <option value="Karachi East">Karachi East</option>
+                                                            <option value="Karachi South">Karachi South</option>
+                                                            <option value="Karachi Center">Karachi Center</option>
+                                                            <option value="Korangi">Korangi</option>
+                                                            <option value="Malire">Malire</option>
+                                                            <option value="Kemari">Kemari</option>
+                                                        </select>
+                                                        <div class="invalid-feedback">Please select a code.</div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <h5>Activity Code <span class="required">*</span></h5>
+                                                    <div class="controls">
+                                                        <select id="inpActivityCode" name="ActivityCode" class="form-control" required>
+                                                            <option value="" selected disabled>Select Code</option>
+                                                            <option value="code 1">code 1</option>
+                                                            <option value="code 2">code 2</option>
+                                                         
+                                                        </select>
+                                                        <div class="invalid-feedback">Please select a Code.</div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <h5>Facility <span class="required">*</span></h5>
+                                                    <div class="controls">
+                                                        <select id="inpfacility" name="inpfacility" class="form-control" required>
+                                                            <option value="" selected disabled>Select Facility</option>
+                                                            <option value="Lahore">facility 1</option>
+                                                            <option value="Gujranwala">facility 2</option>
+                                                            
+                                                        </select>
+                                                        <div class="invalid-feedback">Please select a Facility.</div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <h5>Other Place <span class="Optional">(optional)</span></h5>
+                                                    <div class="controls">
+                                                        <input type="text" id="otherplace" name="otherplace" class="form-control" value=" " >
+                                                    </div>
+                                                </div>
+    
                                                     <div class="form-group">
                                                         <h5>Department Conducting Activity <span class="required">*</span></h5>
                                                         <div class="controls">
@@ -4274,17 +4381,31 @@
                                                         <h5>Type of Activity <span class="required">*</span></h5>
                                                         <div class="controls">
                                                             <select id="inpActivityType" name="activityType" class="form-control" required>
-                                                                <option value="" selected disabled>Select Activity Type</option>
-                                                                <option value="FHD">FHD</option>
-                                                                <option value="Satellite Camp">Satellite Camp</option>
-                                                                <option value="MSU">MSU</option>
-                                                             
-                                                                <option value="Training Attendance Sheet">Training Attendance Sheet</option>
-                                                                <option value="OJT">OJT</option>
-                                                                
+                                                                <option value="Field activity">Field activity</option>
+                                                                <option value="Training">Training</option>
                                                             </select>
                                                             <div class="invalid-feedback">Please select an activity type.</div>
                                                         </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="typeOfHII">Type of HII</label>
+                                                        <select class="form-control" id="typeOfHII" name="typeOfHII" required>
+                                                            <option value="FHD">FHD</option>
+                                                            <option value="MSU">MSU</option>
+                                                            <option value="SatelliteCamp">Satellite Camp</option>
+                                                            <option value="PPFP">PPFP</option>
+                                                            <option value="OJT">OJT</option>
+                                                            <option value="WSO">WSO</option>
+                                                            <option value="CHW">CHW</option>
+                                                            <option value="FMO">FMO</option>
+                                                            <option value="FPChampion">FP Champion</option>
+                                                            <option value="FPIntegration">FP Integration</option>
+                                                            <option value="MasterCoaches">Master Coaches</option>
+                                                            <option value="DataHMIS">Data/HMIS</option>
+                                                            <option value="MassMedia">Mass Media</option>
+                                                            <option value="AdvocacySubnational">Advocacy at Subnational</option>
+                                                            <option value="RAISE">RAISE</option>
+                                                        </select>
                                                     </div>
                                                     <div class="form-group">
                                                         <h5>Accumulative Activity Number (Counting)</h5>
@@ -4293,7 +4414,24 @@
                                                           
                                                         </div>
                                                     </div>
-
+                                                    <div class="form-group">
+                                                        <label for="totalMale">Total number of Male</label>
+                                                        <input type="number" class="form-control" id="totalMale" name="totalMale">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="totalFemale">Total number of Female</label>
+                                                        <input type="number" class="form-control" id="totalFemale" name="totalFemale">
+                                                    </div>
+                                                        <!-- Auto-generated Total Participants -->
+                                                    <div class="form-group">
+                                                        <label for="totalParticipants">Total Participants</label>
+                                                        <input type="number" class="form-control" id="totalParticipants" name="totalParticipants" readonly>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="attachment">Attachment (Attendance Sheet)</label>
+                                                        <input type="file" class="form-control" id="attachment" name="attachment">
+                                                    </div>
+        
                                                 </div>
                                             </div>
                                         </div>
@@ -4304,13 +4442,13 @@
                                                
                                             </div>
                                         </div>
-
+        
                                              
                                       <div class="row">
                                         <div class="col-sm-12">
                                             <!-- Plus button to add rows dynamically -->
                                             <button type="button" class="btn btn-primary" onclick="addTableRow()">+</button>
-
+        
                                             
                                             <table class="table">
                                                 <thead>
@@ -4319,6 +4457,7 @@
                                                         <th>Title</th>
                                                         <th>Phone Number</th>
                                                         <th>Email</th>
+                                                        <th>Facility/Department</th>    
                                                     </tr>
                                                 </thead>
                                                 <tbody id="tableBody">
@@ -4328,12 +4467,18 @@
                                                         <td><input type="text" class="form-control" name="title[]"></td>
                                                         <td><input type="text" class="form-control" name="phoneNumber[]"></td>
                                                         <td><input type="email" class="form-control" name="email[]"></td>
+                                                        <td>
+                                                            <select class="form-control" name="facility[]">
+                                                                <option value="facility1">Facility 1</option>
+                                                                <option value="facility2">Facility 2</option>
+                                                            </select>
+                                                        </td>
                                                     </tr>
                                                 </tbody>
                                             </table>
                                         </div>
                                     </div>
-
+        
                                         <div class="row">
                                                 <div class="col-lg-6 col-md-12 mx-auto">
                                                     <div class="block-button">
@@ -4341,9 +4486,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-
-
-                                   
                                     </form>
                                 </div>
                             </div>
@@ -4428,6 +4570,18 @@
                                                         <h5>Total facilities implementing HII</h5>
                                                         <div class="controls">
                                                             <input type="number" id="totalFacilities" class="form-control" name="totalFacilities" readonly>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <h5>Total Eligible facilities</h5>
+                                                        <div class="controls">
+                                                            <input type="number" id="totalEligiblefacilities" class="form-control" name="totalEligiblefacilities">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <h5>Total Facilities</h5>
+                                                        <div class="controls">
+                                                            <input type="number" id="totalFacilities_" class="form-control" name="totalFacilities_" >
                                                         </div>
                                                     </div>
                                                     <div class="row mt-4">
@@ -4651,14 +4805,11 @@
                                                     <div class="form-group">
                                                         <h5>Name of Trainer <span class="required">*</span></h5>
                                                         <div class="controls">
-                                                            <select id="inpTrainer" name="trainer" class="form-control" required>
-                                                                <option value="" selected="" disabled="">Select Trainer</option>
-                                                                <option value="trainer1">Trainer 1</option>
-                                                                <option value="trainer2">Trainer 2</option>
-                                                            </select>
+                                                            <input type="text" id="inpTrainer" name="trainer" class="form-control" required placeholder="Enter Trainer Names (comma-separated)">
                                                             <div class="invalid-feedback">Please fill out this field.</div>
                                                         </div>
                                                     </div>
+                                                    
                                                     <div class="form-group">
                                                         <h5>First/Repeat Session <span class="required">*</span></h5>
                                                         <div class="controls">
@@ -4747,7 +4898,7 @@
                                                                             <div class="formFields">
                                                                                 <div class="form-group">
                                                                                     <div class="form-group">
-
+                            
                                                                                         <h5>Facility Name<span class="required">*</span></h5>
                                                                                         <div class="controls">
                                                                                             <select id="FacilityName" name="facilityName" class="form-control" required>
@@ -4758,23 +4909,13 @@
                                                                                             <div class="help-block"></div>
                                                                                         </div>
                                                                                     </div>
-
+                            
                                                                                     <h5>Date<span class="required">*</span></h5>
                                                                                     <div class="controls">
                                                                                         <input type="date" id="inpCoachingLogDate" class="form-control" name="date" required>
                                                                                         <div class="help-block"></div>
                                                                                     </div>
-                                                                                </div>
-                                                                                <div class="form-group">
-                                                                                    <h5>Coachee Type<span class="required">*</span></h5>
-                                                                                    <div class="controls">
-                                                                                        <select id="inpCoachingLogCoacheeType" name="coacheeType" class="form-control" required>
-                                                                                            <option value="" selected="" disabled="">Select Coachee Type</option>
-                                                                                            <option value="Individual">Individual</option>
-                                                                                            <option value="Group">Group</option>
-                                                                                        </select>
-                                                                                        <div class="help-block"></div>
-                                                                                    </div>
+                            
                                                                                 </div>
                                                                                 <div class="form-group">
                                                                                     <h5>Coach Name<span class="required">*</span></h5>
@@ -4791,15 +4932,23 @@
                                                                                 <div class="form-group">
                                                                                     <h5>Coachee Name<span class="required">*</span></h5>
                                                                                     <div class="controls">
-                                                                                        <select id="inpCoachingLogCoacheeName" name="coacheeName" class="form-control" required>
-                                                                                            <option value="" selected="" disabled="">Select Coachee Name</option>
-                                                                                            <option value="staff1">Staff 1</option>
-                                                                                            <option value="staff2">Staff 2</option>
-                                                                                          
+                                                                                        <input type="text" id="inpCoachingLogCoacheeName" name="coacheeName" class="form-control" required placeholder="Enter Coachee Name">
+                                                                                        <div class="help-block"></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                
+                                                                                <div class="form-group">
+                                                                                    <h5>Coachee Type<span class="required">*</span></h5>
+                                                                                    <div class="controls">
+                                                                                        <select id="inpCoachingLogCoacheeType" name="coacheeType" class="form-control" required>
+                                                                                            <option value="" selected="" disabled="">Select Coachee Type</option>
+                                                                                            <option value="Individual">Individual</option>
+                                                                                            <option value="Group">Group</option>
                                                                                         </select>
                                                                                         <div class="help-block"></div>
                                                                                     </div>
                                                                                 </div>
+                                                                           
                                                                                 
                                                                                 <div class="form-group">
                                                                                     <h5>Geography of Coachee<span class="required">*</span></h5>
@@ -4937,7 +5086,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            
                                         </div>
                                     </section>
                                     <!-- Input Validation end -->
