@@ -334,155 +334,14 @@
     <div class="content-wrapper">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-xl-6 col-lg-12 col-12">
+                <div class="col-12">
                     <div class="card">
                         <div class="card-body" style="width: 100%; padding: 20px;">
                             <h2>Lunch & Transportation Voucher </h2>
-                            <form id="addActivityDetailsForm">
+                            <form id="addTrainingDetailsForm" style="max-width: 1000px;">
                                 <div class="form-group">
                                     <label for="city">City</label>
-                                    <select class="form-control" id="city" name="city" required>
-                                        <option value="Lahore">Lahore</option>
-                                                <option value="Gujranwala">Gujranwala</option>
-                                                <option value="Rawalpindi">Rawalpindi</option>
-                                                <option value="Faisalabad">Faisalabad</option>
-                                                <option value="Multan">Multan</option>
-                                                <option value="Khanewal">Khanewal</option>
-                                                <option value="Karachi - West">Karachi - West</option>
-                                                <option value="Karachi - East">Karachi - East</option>
-                                                <option value="Karachi - South">Karachi - South</option>
-                                                <option value="Karachi - Center">Karachi - Center</option>
-                                                <option value="Korangi">Korangi</option>
-                                                <option value="Malir">Malir</option>
-                                                <option value="Kemari">Kemari</option>
-                                    </select>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="facility">Facility</label>
-                                    <select class="form-control" id="facility" name="facility" required>
-                                        <option value="Facility1">Facility 1</option>
-                                        <option value="Facility2">Facility 2</option>
-                                    </select>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="activity">Activity</label>
-                                    <select class="form-control" id="activity" name="activity" required>
-                                        <option value="FHD">FHD</option>
-                                        <option value="Satellite Camp">Satellite Camp</option>
-                                        <option value="MSU">MSU</option>
-                                    </select>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="department">Department</label>
-                                    <select class="form-control" id="department" name="department" required>
-                                        <option value="DoH">DoH</option>
-                                        <option value="PWD">PWD</option>
-                                        <option value="PPHI">PPHI</option>
-                                    </select>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="activityDate">Date</label>
-                                    <input type="date" class="form-control" id="activityDate" name="activityDate" required>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="name">Name</label>
-                                    <input type="text" class="form-control" value="Name" id="name" name="name" readonly
-                                        placeholder="Enter your name">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="designation">Designation</label>
-                                    <select class="form-control" id="designation" name="designation" required>
-                                        <option value="WMO/Facility Incharge">WMO/Facility Incharge</option>
-                                        <option value="LHV">LHV</option>
-                                        <option value="LHS">LHS</option>
-                                        <option value="LHW">LHW</option>
-                                        <option value="FWW">FWW</option>
-                                        <option value="FWA/M">FWA/M</option>
-                                        <option value="FWA/F">FWA/F</option>
-                                        <option value="SMZ">SMZ</option>
-                                        <option value="Mid Wife">Mid Wife</option>
-                                        <option value="CEO DHA/DHO">CEO DHA/DHO</option>
-                                        <option value="DC IRMNCH/Focal Person">DC IRMNCH/Focal Person</option>
-                                        <option value="M&E/SO">M&E/SO</option>
-                                        <option value="DPWO">DPWO</option>
-                                        <option value="TPWO">TPWO</option>
-                                        <option value="Driver">Driver</option>
-                                    </select>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="cnic">CNIC</label>
-                                    <input type="text" class="form-control" id="cnic" value="1234567891013" name="cnic" required pattern="[0-9]{13}" title="Enter 13 digits" readonly
-                                        placeholder="Enter CNIC">
-                                </div>
-
-                            
-                                 <div class="form-group">
-                                    <label for="iban">IBAN</label>
-                                    <input type="text" class="form-control" id="iban" value="1234567891013" name="iban" required placeholder="Enter IBAN" readonly>
-                                </div>
-
-                                    
-
-                                <div class="form-group">
-                                    <label for="contact">Contact</label>
-                                    <input type="text" class="form-control" value="03001111111" id="contact" name="contact" required pattern="[0-9]{11}" title="Enter 11 digits" readonly
-                                     placeholder="Enter contact number">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="ratePerDay">Rate/Day</label>
-                                    <input type="number" value="1500" class="form-control" id="ratePerDay" name="ratePerDay" readonly>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="numberOfDays">Number of Days</label>
-                                    <input type="number" class="form-control" id="numberOfDays" name="numberOfDays" required placeholder="Enter number of days">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="amount">Amount</label>
-                                    <input type="text" class="form-control" id="amount" name="amount" readonly>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="attachment1">L&T Voucher</label>
-                                    <input type="file" class="form-control-file" id="attachment1" name="attachment1">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="attachment2">Attendance Sheet</label>
-                                    <input type="file" class="form-control-file" id="attachment2" name="attachment2">
-                                </div>
-
-                                <button type="submit" class="btn btn-info">Submit</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="tadavoucher_main_form" class="main-content hide_block">
-    <div class="content-wrapper">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xl-6 col-lg-12 col-12">
-                    <div class="card">
-                        <div class="card-body" style="width: 100%; padding: 20px;">
-                            <h2>TADA Voucher</h2>
-                            <form id="addTrainingDetailsForm">
-                                <div class="form-group">
-                                    <label for="city">City</label>
-                                    <select class="form-control" id="city" name="city" required>
+                                    <select class="form-control" id="city" name="city" required style="width: 600px;">
                                         <option value="Gujranwala">Gujranwala</option>
                                         <option value="Rawalpindi">Rawalpindi</option>
                                         <option value="Faisalabad">Faisalabad</option>
@@ -500,7 +359,220 @@
 
                                 <div class="form-group">
                                     <label for="facility">Facility</label>
-                                    <select class="form-control" id="facility" name="facility" required>
+                                    <select class="form-control" id="facility" name="facility" required style="width: 600px;">
+                                        <option value="Facility1">Facility 1</option>
+                                        <option value="Facility2">Facility 2</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="activity">Activity</label>
+                                    <select class="form-control" id="activity" name="activity" required style="width: 600px;">
+                                        <option value="FHD">FHD</option>
+                                        <option value="Satellite Camp">Satellite Camp</option>
+                                        <option value="MSU">MSU</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="department">Department</label>
+                                    <select class="form-control" id="department" name="department" required style="width: 600px;">
+                                        <option value="DoH">DoH</option>
+                                        <option value="PWD">PWD</option>
+                                        <option value="PPHI">PPHI</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="trainingDate">Date</label>
+                                    <input type="date" class="form-control" id="trainingDate" name="trainingDate" required style="width: 600px;">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="attachment1">Attachment 1: L&T Voucher</label>
+                                    <input type="file" class="form-control-file" id="attachment1" name="attachment1">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="attachment2">Attachment 2: Attendance Sheet</label>
+                                    <input type="file" class="form-control-file" id="attachment2" name="attachment2">
+                                </div>
+
+                                <div class="form-group">
+                                 <!-- Add button to dynamically add rows -->
+                                 <button type="button" class="btn btn-success" onclick="addRow1()">+</button>
+
+                                 <!-- Table to display entered data -->
+                                 <table class="table" id="dataTable">
+                                     <thead>
+                                         <tr>
+                                             <th>Name</th>
+                                             <th>Designation</th>
+                                             <th>CNIC</th>
+                                             <th>IBAN</th>
+                                             <th>Contact</th>
+                                             <th>Rate/Day</th>
+                                             <th>No. of Days</th>
+                                             <th>TA Amount</th>
+                                             <th>Total</th>
+                                         </tr>
+                                     </thead>
+                                     <tbody>
+                                        
+                                         <tr>
+                                             <td><input type="text" class="form-control" name="name[]"  ></td>
+                                             <td style="width: 150px;">
+                                                 <select class="form-control" name="designation[]" onchange="calculateAmount(this)">
+                                                    <option value="WMO/Facility Incharge">WMO/Facility Incharge</option>
+                                                    <option value="LHV">LHV</option>
+                                                    <option value="LHS">LHS</option>
+                                                    <option value="LHW">LHW</option>
+                                                    <option value="FWW">FWW</option>
+                                                    <option value="FWA/M">FWA/M</option>
+                                                    <option value="FWA/F">FWA/F</option>
+                                                    <option value="SMZ">SMZ</option>
+                                                    <option value="Mid Wife">Mid Wife</option>
+                                                    <option value="CEO DHA/DHO">CEO DHA/DHO</option>
+                                                    <option value="DC IRMNCH/Focal Person">DC IRMNCH/Focal Person</option>
+                                                    <option value="M&E/SO">M&E/SO</option>
+                                                    <option value="DPWO">DPWO</option>
+                                                    <option value="TPWO">TPWO</option>
+                                                    <option value="Driver">Driver</option>
+                                                 </select>
+                                             </td>
+                                      
+                                             <td><input type="text" class="form-control" name="cnic[]" ></td>
+                                             <td><input type="text" class="form-control" name="iban[]" ></td>
+                                             <td><input type="text" class="form-control" name="contact[]" ></td>
+                                             <td style="width: 120px;"> <select class="form-control" name="ratePerDay[]">
+                                                 
+                                                <option value="item1">1500</option>
+                                                <option value="item2">1000</option>
+                                                <option value="item3">500</option>
+                                                <option value="item4">2000</option>
+                                            </select></td>
+                                             <td><input type="number" class="form-control" name="numberOfDays[]" ></td>
+                                           
+                                             <td><input type="number" class="form-control" name="taAmount[]"></td>
+                                             <td><input type="text" class="form-control" name="total[]"></td>
+                                         </tr>
+                                     </tbody>
+                                 </table>
+</div>
+                                 <button type="submit" class="btn btn-info">Submit</button>
+                             </form>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </section>
+
+ <script>
+     // JavaScript code to add rows dynamically
+     function addRow1() {
+    var table = document.getElementById('dataTable');
+    var newRow = table.insertRow(table.rows.length);
+
+    var fields = ['name', 'designation', 'cnic', 'iban', 'contact', 'ratePerDay', 'numberOfDays', 'taAmount', 'total'];
+
+    fields.forEach(function (field) {
+        var cell = newRow.insertCell();
+
+        if (field === 'designation' || field === 'ratePerDay') {
+            var select = document.createElement('select');
+            select.className = 'form-control';
+            select.name = field + '[]';
+
+            // Clear previous values in the dropdown
+            while (cell.firstChild) {
+                cell.removeChild(cell.firstChild);
+            }
+
+            if (field === 'designation') {
+                select.addEventListener('change', function () {
+                    calculateAmount(select);
+                });
+                // Add options to the select element
+                var options = [
+                    'WMO/Facility Incharge',
+                    'LHV',
+                    'LHS',
+                    'LHW',
+                    'FWW',
+                    'FWA/M',
+                    'FWA/F',
+                    'SMZ',
+                    'Mid Wife',
+                    'CEO DHA/DHO',
+                    'DC IRMNCH/Focal Person',
+                    'M&E/SO',
+                    'DPWO',
+                    'TPWO',
+                    'Driver'
+                ];
+                options.forEach(function (optionText) {
+                    var option = document.createElement('option');
+                    option.value = optionText;
+                    option.text = optionText;
+                    select.add(option);
+                });
+            } 
+            else if (field === 'ratePerDay') {
+                // Add ratePerDay options
+                var rates = [1500, 1000, 2000,500];
+                rates.forEach(function (rate) {
+                    var option = document.createElement('option');
+                    option.value = rate;
+                    option.text = rate;
+                    select.add(option);
+                });
+            }
+
+            cell.appendChild(select);
+        } else {
+            var input = document.createElement('input');
+            input.type = 'text';
+            input.className = 'form-control';
+            input.name = field + '[]';
+            cell.appendChild(input);
+        }
+    });
+}
+ </script>
+                          
+
+<section id="tadavoucher_main_form" class="main-content hide_block">
+    <div class="content-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body" style="width: 100%; padding: 20px; overflow-x: auto;">
+                            <h2>TADA Voucher</h2>
+                            <form id="addTrainingDetailsForm" style="max-width: 1000px;">
+                                <div class="form-group">
+                                    <label for="city">City</label>
+                                    <select class="form-control" id="city" name="city" required style="width: 600px;">
+                                        <option value="Gujranwala">Gujranwala</option>
+                                        <option value="Rawalpindi">Rawalpindi</option>
+                                        <option value="Faisalabad">Faisalabad</option>
+                                        <option value="Multan">Multan</option>
+                                        <option value="Khanewal">Khanewal</option>
+                                        <option value="Karachi - West">Karachi - West</option>
+                                        <option value="Karachi - East">Karachi - East</option>
+                                        <option value="Karachi - South">Karachi - South</option>
+                                        <option value="Karachi - Center">Karachi - Center</option>
+                                        <option value="Korangi">Korangi</option>
+                                        <option value="Malir">Malir</option>
+                                        <option value="Kemari">Kemari</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="facility">Facility</label>
+                                    <select class="form-control" id="facility" name="facility" required style="width: 600px;">
                                         <option value="Facility1">Facility 1</option>
                                         <option value="Facility2">Facility 2</option>
                                     </select>
@@ -508,7 +580,7 @@
 
                                 <div class="form-group">
                                     <label for="training">Training</label>
-                                    <select class="form-control" id="training" name="training" required>
+                                    <select class="form-control" id="training" name="training" required style="width: 600px;">
                                         <option value="Master Coaches">Master Coaches</option>
                                         <option value="FP">FP</option>
                                         <option value="PPFP">PPFP</option>
@@ -521,7 +593,7 @@
 
                                 <div class="form-group">
                                     <label for="department">Department</label>
-                                    <select class="form-control" id="department" name="department" required>
+                                    <select class="form-control" id="department" name="department" required style="width: 600px;">
                                         <option value="DoH">DoH</option>
                                         <option value="PWD">PWD</option>
                                         <option value="PPHI">PPHI</option>
@@ -534,196 +606,185 @@
 
                                 <div class="form-group">
                                     <label for="trainingDate">Date</label>
-                                    <input type="date" class="form-control" id="trainingDate" name="trainingDate" required>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="name">Name</label>
-                                    <input type="text" class="form-control" value="name" id="name" name="name" readonly
-                                        placeholder="Enter your name">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="designation">Designation</label>
-                                    <select class="form-control" id="designation1" name="designation" required>
-                                        <option value="WMO/Facility Incharge">WMO/Facility Incharge</option>
-                                        <option value="LHV">LHV</option>
-                                        <option value="LHS">LHS</option>
-                                        <option value="LHW">LHW</option>
-                                        <option value="FWW">FWW</option>
-                                        <option value="FWA/M">FWA/M</option>
-                                        <option value="FWA/F">FWA/F</option>
-                                        <option value="SMZ">SMZ</option>
-                                        <option value="Mid Wife">Mid Wife</option>
-                                        <option value="CEO DHA/DHO">CEO DHA/DHO</option>
-                                        <option value="DC IRMNCH/Focal Person">DC IRMNCH/Focal Person</option>
-                                        <option value="M&E/SO">M&E/SO</option>
-                                        <option value="DPWO">DPWO</option>
-                                        <option value="TPWO">TPWO</option>
-                                        <option value="Driver">Driver</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="bps">BPS</label>
-                                    <input type="text" value = "18" class="form-control" id="bps" name="bps" readonly>
-                                </div>
-                                <div class="form-group">
-                                    <label for="cnic">CNIC</label>
-                                    <input type="text" value="1234567891013" class="form-control" id="cnic" name="cnic" readonly
-                                        pattern="[0-9]{13}" title="Enter 13 digits" placeholder="Enter CNIC">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="iban">IBAN</label>
-                                    <input type="text" class="form-control" value="1234567891013" id="iban" name="iban" readonly
-                                        placeholder="Enter IBAN">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="contact">Contact</label>
-                                    <input type="text" class="form-control" id="contact" value="03001111111" name="contact" readonly
-                                        pattern="[0-9]{11}" title="Enter 11 digits" placeholder="Enter contact number">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="ratePerDay">Rate/Day</label>
-                                    <input type="number" class="form-control" value="1500" id="ratePerDay1" name="ratePerDay" readonly>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="numberOfDays">No. of Days</label>
-                                    <input type="number" class="form-control" id="numberOfDays1" name="numberOfDays" required
-                                        placeholder="Enter number of days">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="amount">Amount</label>
-                                    <input type="text" class="form-control" id="amount1" name="amount" readonly>
+                                    <input type="date" class="form-control" id="trainingDate" name="trainingDate" required style="width: 600px;">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="attachment">Attendance Sheet</label>
                                     <input type="file" class="form-control-file" id="attachment" name="attachment">
                                 </div>
+                                <div class="form-group">
+                                 <!-- Add button to dynamically add rows -->
+                                 <button type="button" class="btn btn-success" onclick="addRow()">+</button>
 
-                                <button type="submit" class="btn btn-info">Submit</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+                                 <!-- Table to display entered data -->
+                                 <table class="table" id="dataTable">
+                                     <thead>
+                                         <tr>
+                                             <th>Name</th>
+                                             <th>Designation</th>
+                                             <th>BPS</th>
+                                             <th>CNIC</th>
+                                             <th>IBAN</th>
+                                             <th>Contact</th>
+                                             <th>Rate/Day</th>
+                                             <th>No. of Days</th>
+                                             <th>TA Amount</th>
+                                             <th>Total</th>
+                                         </tr>
+                                     </thead>
+                                     <tbody>
+                                        
+                                         <tr>
+                                             <td><input type="text" class="form-control" name="name[]"  ></td>
+                                             <td style="width: 150px;">
+                                                 <select class="form-control" name="designation[]" onchange="calculateAmount(this)">
+                                                    <option value="WMO/Facility Incharge">WMO/Facility Incharge</option>
+                                                    <option value="LHV">LHV</option>
+                                                    <option value="LHS">LHS</option>
+                                                    <option value="LHW">LHW</option>
+                                                    <option value="FWW">FWW</option>
+                                                    <option value="FWA/M">FWA/M</option>
+                                                    <option value="FWA/F">FWA/F</option>
+                                                    <option value="SMZ">SMZ</option>
+                                                    <option value="Mid Wife">Mid Wife</option>
+                                                    <option value="CEO DHA/DHO">CEO DHA/DHO</option>
+                                                    <option value="DC IRMNCH/Focal Person">DC IRMNCH/Focal Person</option>
+                                                    <option value="M&E/SO">M&E/SO</option>
+                                                    <option value="DPWO">DPWO</option>
+                                                    <option value="TPWO">TPWO</option>
+                                                    <option value="Driver">Driver</option>
+                                                 </select>
+                                             </td>
+                                             <td style="width: 90px;">
+                                                 <select class="form-control" name="bps[]">
+                                                 
+                                                     <option value="7">7</option>
+                                                     <option value="8">8</option>
+                                                     <option value="9">9</option>
+                                                     <option value="10">10</option>
+                                                     <option value="11">11</option>
+                                                     <option value="12">12</option>
+                                                     <option value="13">13</option>
+                                                     <option value="14">14</option>
+                                                     <option value="15">15</option>
+                                                     <option value="16">16</option>
+                                                     <option value="17">17</option>
+                                                     <option value="18">18</option>
+                                                     <option value="19">19</option>
+                                                     <option value="20">20</option>
+                                                     <option value="21">21</option>
+                                                     <option value="22">22</option>
+                                                 </select>
+                                             </td>
+                                             <td><input type="text" class="form-control" name="cnic[]" ></td>
+                                             <td><input type="text" class="form-control" name="iban[]" ></td>
+                                             <td><input type="text" class="form-control" name="contact[]" ></td>
+                                             <td style="width: 120px;"> <select class="form-control" name="ratePerDay[]">
+                                                 
+                                                <option value="item1">1500</option>
+                                                <option value="item2">1000</option>
+                                                <option value="item3">500</option>
+                                                <option value="item4">2000</option>
+                                            </select></td>
+                                             <td><input type="number" class="form-control" name="numberOfDays[]" ></td>
+                                           
+                                             <td><input type="number" class="form-control" name="taAmount[]"></td>
+                                             <td><input type="text" class="form-control" name="total[]"></td>
+                                         </tr>
+                                     </tbody>
+                                 </table>
+</div>
+                                 <button type="submit" class="btn btn-info">Submit</button>
+                             </form>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </section>
 
-<script>
-    // JavaScript code to calculate rate per day and amount based on designation
-    document.getElementById('designation1').addEventListener('change', function () {
-        var ratePerDayField = document.getElementById('ratePerDay1');
-        var designation = this.value;
+ <script>
+     // JavaScript code to add rows dynamically
+     function addRow() {
+    var table = document.getElementById('dataTable');
+    var newRow = table.insertRow(table.rows.length);
 
-        switch (designation) {
-            case 'WMO/Facility Incharge':
-                ratePerDayField.value = 1500;
-                break;
-            case 'LHV':
-            case 'LHS':
-            case 'LHW':
-            case 'FWW':
-            case 'FWA/M':
-            case 'FWA/F':
-            case 'SMZ':
-            case 'Mid Wife':
-                ratePerDayField.value = 1000;
-                break;
-            case 'CEO DHA/DHO':
-                ratePerDayField.value = 2000;
-                break;
-            case 'DC IRMNCH/Focal Person':
-                ratePerDayField.value = 1500;
-                break;
-            case 'M&E/SO':
-            case 'DPWO':
-            case 'TPWO':
-                ratePerDayField.value = 1000;
-                break;
-            case 'Driver':
-                ratePerDayField.value = 500;
-                break;
-            default:
-                ratePerDayField.value = 0;
-        }
-    });
+    var fields = ['name', 'designation', 'bps', 'cnic', 'iban', 'contact', 'ratePerDay', 'numberOfDays', 'taAmount', 'total'];
 
-    // JavaScript code to calculate amount based on rate per day and number of days
-    document.getElementById('numberOfDays1').addEventListener('input', function () {
-        var ratePerDay = parseInt(document.getElementById('ratePerDay1').value, 10);
-        var numberOfDays = parseInt(this.value, 10);
-        var amountField = document.getElementById('amount1');
+    fields.forEach(function (field) {
+        var cell = newRow.insertCell();
 
-        if (!isNaN(ratePerDay) && !isNaN(numberOfDays)) {
-            amountField.value = ratePerDay * numberOfDays;
+        if (field === 'designation' || field === 'bps' || field === 'ratePerDay') {
+            var select = document.createElement('select');
+            select.className = 'form-control';
+            select.name = field + '[]';
+
+            // Clear previous values in the dropdown
+            while (cell.firstChild) {
+                cell.removeChild(cell.firstChild);
+            }
+
+            if (field === 'designation') {
+                select.addEventListener('change', function () {
+                    calculateAmount(select);
+                });
+                // Add options to the select element
+                var options = [
+                    'WMO/Facility Incharge',
+                    'LHV',
+                    'LHS',
+                    'LHW',
+                    'FWW',
+                    'FWA/M',
+                    'FWA/F',
+                    'SMZ',
+                    'Mid Wife',
+                    'CEO DHA/DHO',
+                    'DC IRMNCH/Focal Person',
+                    'M&E/SO',
+                    'DPWO',
+                    'TPWO',
+                    'Driver'
+                ];
+                options.forEach(function (optionText) {
+                    var option = document.createElement('option');
+                    option.value = optionText;
+                    option.text = optionText;
+                    select.add(option);
+                });
+            } else if (field === 'bps') {
+                // Add BPS options from 7 to 22
+                for (var i = 7; i <= 22; i++) {
+                    var option = document.createElement('option');
+                    option.value = i;
+                    option.text = i;
+                    select.add(option);
+                }
+            }
+            else if (field === 'ratePerDay') {
+                // Add ratePerDay options
+                var rates = [1500, 1000, 2000,500];
+                rates.forEach(function (rate) {
+                    var option = document.createElement('option');
+                    option.value = rate;
+                    option.text = rate;
+                    select.add(option);
+                });
+            }
+
+            cell.appendChild(select);
         } else {
-            amountField.value = '';
+            var input = document.createElement('input');
+            input.type = 'text';
+            input.className = 'form-control';
+            input.name = field + '[]';
+            cell.appendChild(input);
         }
     });
-</script>
-
-<script>
-    // JavaScript code to calculate rate per day and amount based on designation
-    document.getElementById('designation').addEventListener('change', function () {
-        var ratePerDayField = document.getElementById('ratePerDay');
-        var designation = this.value;
-
-        switch (designation) {
-            case 'WMO/Facility Incharge':
-                ratePerDayField.value = 1500;
-                break;
-            case 'LHV':
-            case 'LHS':
-            case 'LHW':
-            case 'FWW':
-            case 'FWA/M':
-            case 'FWA/F':
-            case 'SMZ':
-            case 'Mid Wife':
-                ratePerDayField.value = 1000;
-                break;
-            case 'CEO DHA/DHO':
-                ratePerDayField.value = 2000;
-                break;
-            case 'DC IRMNCH/Focal Person':
-                ratePerDayField.value = 1500;
-                break;
-            case 'M&E/SO':
-            case 'DPWO':
-            case 'TPWO':
-                ratePerDayField.value = 1000;
-                break;
-            case 'Driver':
-                ratePerDayField.value = 500;
-                break;
-            default
-
-:
-                ratePerDayField.value = 0;
-        }
-    });
-
-    // JavaScript code to calculate amount based on rate per day and number of days
-    document.getElementById('numberOfDays').addEventListener('input', function () {
-        var ratePerDay = parseInt(document.getElementById('ratePerDay').value, 10);
-        var numberOfDays = parseInt(this.value, 10);
-        var amountField = document.getElementById('amount');
-
-        if (!isNaN(ratePerDay) && !isNaN(numberOfDays)) {
-            amountField.value = ratePerDay * numberOfDays;
-        } else {
-            amountField.value = '';
-        }
-    });
-</script>
-
+}
+ </script>
 <section id="dtc_main_form" class="main-content hide_block">
     <div class="content-wrapper">
         <div class="container-fluid">
