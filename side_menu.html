@@ -618,7 +618,7 @@
                                  <button type="button" class="btn btn-success" onclick="addRow()">+</button>
 
                                  <!-- Table to display entered data -->
-                                 <table class="table" id="dataTable">
+                                 <table class="table" id="dataTable1">
                                      <thead>
                                          <tr>
                                              <th>Name</th>
@@ -708,7 +708,7 @@
  <script>
      // JavaScript code to add rows dynamically
      function addRow() {
-    var table = document.getElementById('dataTable');
+    var table = document.getElementById('dataTable1');
     var newRow = table.insertRow(table.rows.length);
 
     var fields = ['name', 'designation', 'bps', 'cnic', 'iban', 'contact', 'ratePerDay', 'numberOfDays', 'taAmount', 'total'];
